@@ -6,9 +6,10 @@
   "settings-schema": "org.gnome.shell.extensions.osd-volume-number",
   "shell-version": [
     "42",
-    "43"
+    "43",
+    "44"
   ],
   "url": "https://github.com/Deminder/osd-volume-number",
   "uuid": "osd-volume-number@deminder",
-  "version": 2
+  "version": 6
 }

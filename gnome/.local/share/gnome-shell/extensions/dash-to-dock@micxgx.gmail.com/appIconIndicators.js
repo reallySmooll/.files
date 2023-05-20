@@ -42,10 +42,6 @@ var AppIconIndicator = class DashToDockAppIconIndicator {
     constructor(source) {
         this._indicators = [];
 
-        // Unity indicators always enabled for now
-        const unityIndicator = new UnityIndicator(source);
-        this._indicators.push(unityIndicator);
-
         // Choose the style for the running indicators
         let runningIndicator = null;
         let runningIndicatorStyle;
@@ -56,6 +52,11 @@ var AppIconIndicator = class DashToDockAppIconIndicator {
         else
             ({ runningIndicatorStyle } = settings);
 
+        if (settings.showIconsEmblems &&
+            !Docking.DockManager.getDefault().notificationsMonitor.dndMode) {
+            const unityIndicator = new UnityIndicator(source);
+            this._indicators.push(unityIndicator);
+        }
 
         switch (runningIndicatorStyle) {
         case RunningIndicatorStyle.DEFAULT:
@@ -691,13 +692,14 @@ var UnityIndicator = class DashToDockUnityIndicator extends IndicatorBase {
         this._source._iconContainer.add_child(this._notificationBadgeBin);
         this.updateNotificationBadgeStyle();
 
-        const { remoteModel } = Docking.DockManager.getDefault();
+        const { remoteModel, notificationsMonitor } = Docking.DockManager.getDefault();
         const remoteEntry = remoteModel.lookupById(this._source.app.id);
+        this._remoteEntry = remoteEntry;
+
         this._signalsHandler.add([
             remoteEntry,
             ['count-changed', 'count-visible-changed'],
-            (sender, { count, count_visible: countVisible }) =>
-                this.setNotificationCount(countVisible ? count : 0),
+            () => this._updateNotificationsCount(),
         ], [
             remoteEntry,
             ['progress-changed', 'progress-visible-changed'],
@@ -708,6 +710,10 @@ var UnityIndicator = class DashToDockUnityIndicator extends IndicatorBase {
             'urgent-changed',
             (sender, { urgent }) => this.setUrgent(urgent),
         ], [
+            notificationsMonitor,
+            'changed',
+            () => this._updateNotificationsCount(),
+        ], [
             St.ThemeContext.get_for_stage(global.stage),
             'changed',
             this.updateNotificationBadgeStyle.bind(this),
@@ -716,6 +722,16 @@ var UnityIndicator = class DashToDockUnityIndicator extends IndicatorBase {
             'notify::size',
             this.updateNotificationBadgeStyle.bind(this),
         ]);
+    }
+
+    destroy() {
+        this._notificationBadgeBin.destroy();
+        this._notificationBadgeBin = null;
+        this._hideProgressOverlay();
+        this.setUrgent(false);
+        this._remoteEntry = null;
+
+        super.destroy();
     }
 
     updateNotificationBadgeStyle() {
@@ -732,8 +748,16 @@ var UnityIndicator = class DashToDockUnityIndicator extends IndicatorBase {
             fontSize /= 0.75;
         }
 
-        fontSize = Math.round((iconSize / defaultIconSize) * fontSize);
-        const leftMargin = Math.round((iconSize / defaultIconSize) * 3);
+        let sizeMultiplier;
+        if (iconSize < defaultIconSize) {
+            sizeMultiplier = Math.max(24, Math.min(iconSize +
+                iconSize * 0.3, defaultIconSize)) / defaultIconSize;
+        } else {
+            sizeMultiplier = iconSize / defaultIconSize;
+        }
+
+        fontSize = Math.round(sizeMultiplier * fontSize);
+        const leftMargin = Math.round(sizeMultiplier * 3);
 
         this._notificationBadgeLabel.set_style(
             `font-size: ${fontSize}px;` +
@@ -760,6 +784,23 @@ var UnityIndicator = class DashToDockUnityIndicator extends IndicatorBase {
             const billions = count / 1e9;
             return `${billions.toFixed(1).toString()}B`;
         }
+    }
+
+    _updateNotificationsCount() {
+        const remoteCount = this._remoteEntry['count-visible']
+            ? this._remoteEntry.count ?? 0 : 0;
+
+        if (remoteCount > 0 &&
+            Docking.DockManager.settings.applicationCounterOverridesNotifications) {
+            this.setNotificationCount(remoteCount);
+            return;
+        }
+
+        const { notificationsMonitor } = Docking.DockManager.getDefault();
+        const notificationsCount = notificationsMonitor.getAppNotificationsCount(
+            this._source.app.id);
+
+        this.setNotificationCount(remoteCount + notificationsCount);
     }
 
     setNotificationCount(count) {
@@ -798,7 +839,7 @@ var UnityIndicator = class DashToDockUnityIndicator extends IndicatorBase {
     }
 
     _drawProgressOverlay(area) {
-        const scaleFactor = St.ThemeContext.get_for_stage(global.stage).scale_factor;
+        const { scaleFactor } = St.ThemeContext.get_for_stage(global.stage);
         const [surfaceWidth, surfaceHeight] = area.get_surface_size();
         const cr = area.get_context();
 

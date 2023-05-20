@@ -19,6 +19,8 @@ static const char *colors[SchemeLast][2] = {
 /* -l and -g options; controls number of lines and columns in grid if > 0 */
 static unsigned int lines      = 5;
 static unsigned int columns    = 5;
+static unsigned int maxhist    = 64;
+static int histnodup           = 1;	/* if 0, record repeated histories */
 
 /*
  * Characters not considered part of a word while deleting words

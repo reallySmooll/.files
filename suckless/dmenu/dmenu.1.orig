@@ -4,8 +4,6 @@ dmenu \- dynamic menu
 .SH SYNOPSIS
 .B dmenu
 .RB [ \-bfiv ]
-.RB [ \-g
-.IR columns ]
 .RB [ \-l
 .IR lines ]
 .RB [ \-m
@@ -22,8 +20,18 @@ dmenu \- dynamic menu
 .IR color ]
 .RB [ \-sf
 .IR color ]
+.RB [ \-nhb
+.IR color ]
+.RB [ \-nhf
+.IR color ]
+.RB [ \-shb
+.IR color ]
+.RB [ \-shf
+.IR color ]
 .RB [ \-w
 .IR windowid ]
+.RB [ \-H
+.IR histfile ]
 .P
 .BR dmenu_run " ..."
 .SH DESCRIPTION
@@ -49,11 +57,8 @@ is faster, but will lock up X until stdin reaches end\-of\-file.
 .B \-i
 dmenu matches menu items case insensitively.
 .TP
-.BI \-g " columns"
-dmenu lists items in a grid with the given number of columns.
-.TP
 .BI \-l " lines"
-dmenu lists items in a grid with the given number of lines.
+dmenu lists items vertically, with the given number of lines.
 .TP
 .BI \-m " monitor"
 dmenu is displayed on the monitor number supplied. Monitor numbers are starting
@@ -80,11 +85,26 @@ defines the selected background color.
 .BI \-sf " color"
 defines the selected foreground color.
 .TP
+.BI \-nhb " color"
+defines the normal highlight background color.
+.TP
+.BI \-nhf " color"
+defines the normal highlight foreground color.
+.TP
+.BI \-shb " color"
+defines the selected highlight background color.
+.TP
+.BI \-shf " color"
+defines the selected highlight foreground color.
+.TP
 .B \-v
 prints version information to stdout, then exits.
 .TP
 .BI \-w " windowid"
 embed into windowid.
+.TP
+.BI \-H " histfile"
+save input in histfile and use it for history navigation.
 .SH USAGE
 dmenu is completely controlled by the keyboard.  Items are selected using the
 arrow keys, page up, page down, home, and end.

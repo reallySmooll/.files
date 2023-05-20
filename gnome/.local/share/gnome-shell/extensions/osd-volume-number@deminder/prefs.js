@@ -5,11 +5,21 @@ const { Adw, Gio, Gtk } = imports.gi;
 
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
-const Gettext = imports.gettext.domain('battery-indicator-icon');
+const { PACKAGE_VERSION } = imports.misc.config;
+const MAJOR = Number.parseInt(PACKAGE_VERSION);
+const Gettext = imports.gettext.domain('osd-volume-number');
 const _ = Gettext.gettext;
 
 function init() {
   ExtensionUtils.initTranslations();
+}
+
+function createSwitchRow(title) {
+  const toggle = new Gtk.Switch({ valign: Gtk.Align.CENTER });
+  const row = new Adw.ActionRow({ title });
+  row.add_suffix(toggle);
+  row.activatable_widget = toggle;
+  return row;
 }
 
 function createComboRow(title, options) {
@@ -46,6 +56,8 @@ function fillPreferencesWindow(window) {
   };
   const iconPosRow = createComboRow(_('Icon position'), iconPosOpts);
 
+  const adaptPanelMenuRow = createSwitchRow(_('Adapt panel menu slider'));
+
   const updateOpt = () => {
     // GUI update
     const numberPos = Object.keys(numberPosOpts)[numberPosRow.selected];
@@ -62,17 +74,28 @@ function fillPreferencesWindow(window) {
     iconPosRow.selected = Object.keys(iconPosOpts).indexOf(
       settings.get_string('icon-position')
     );
+    adaptPanelMenuRow.activatableWidget.active =
+      settings.get_boolean('adapt-panel-menu');
   };
   const handlerIds = [
-    settings.connect('changed::number-position', updateSetting),
-    settings.connect('changed::icon-position', updateSetting),
-  ];
+    'number-position',
+    'icon-position',
+    'adapt-panel-menu',
+  ].map(s => settings.connect(`changed::${s}`, updateSetting));
   updateSetting();
   iconPosRow.connect('notify::selected', updateOpt);
   numberPosRow.connect('notify::selected', updateOpt);
 
+  settings.bind(
+    'adapt-panel-menu',
+    adaptPanelMenuRow.activatableWidget,
+    'active',
+    Gio.SettingsBindFlags.DEFAULT
+  );
+
   group.add(numberPosRow);
   group.add(iconPosRow);
+  if (MAJOR >= 44) group.add(adaptPanelMenuRow);
   page.connect('destroy', () => {
     for (const hid of handlerIds) {
       settings.disconnect(hid);
@@ -80,6 +103,6 @@ function fillPreferencesWindow(window) {
   });
 
   window.default_width = 500;
-  window.default_height = 220;
+  window.default_height = 220 + 40 * (MAJOR >= 44);
   window.add(page);
 }

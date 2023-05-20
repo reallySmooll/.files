@@ -16,8 +16,8 @@
 
 /* exported CancellableChild, getUniqueBusName, getBusNames,
    introspectBusObject, dbusNodeImplementsInterfaces, waitForStartupCompletion,
-   connectSmart, disconnectSmart, versionCheck, getDefaultTheme,
-   getProcessName, indicatorId, tryCleanupOldIndicators */
+   connectSmart, disconnectSmart, versionCheck, getDefaultTheme, destroyDefaultTheme,
+   getProcessName, indicatorId, tryCleanupOldIndicators, DBusProxy */
 
 const ByteArray = imports.byteArray;
 const Gio = imports.gi.Gio;
@@ -32,7 +32,6 @@ const St = imports.gi.St;
 const Config = imports.misc.config;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Extension = ExtensionUtils.getCurrentExtension();
-const IndicatorStatusIcon = Extension.imports.indicatorStatusIcon;
 const PromiseUtils = Extension.imports.promiseUtils;
 const Signals = imports.signals;
 
@@ -114,34 +113,27 @@ async function getProcessName(connectionName, cancellable = null,
     return ByteArray.toString(bytes.toArray().map(v => !v ? 0x20 : v));
 }
 
-async function introspectBusObject(bus, name, cancellable, path = undefined) {
+async function* introspectBusObject(bus, name, cancellable,
+    interfaces = undefined, path = undefined) {
     if (!path)
         path = '/';
 
     const [introspection] = (await bus.call(name, path, 'org.freedesktop.DBus.Introspectable',
         'Introspect', null, new GLib.VariantType('(s)'), Gio.DBusCallFlags.NONE,
-        -1, cancellable)).deep_unpack();
+        5000, cancellable)).deep_unpack();
 
     const nodeInfo = Gio.DBusNodeInfo.new_for_xml(introspection);
-    const nodes = [{ nodeInfo, path }];
+
+    if (!interfaces || dbusNodeImplementsInterfaces(nodeInfo, interfaces))
+        yield { nodeInfo, path };
 
     if (path === '/')
         path = '';
 
-    const requests = [];
-    for (const subNodes of nodeInfo.nodes) {
-        const subPath = `${path}/${subNodes.path}`;
-        requests.push(introspectBusObject(bus, name, cancellable, subPath));
+    for (const subNodeInfo of nodeInfo.nodes) {
+        const subPath = `${path}/${subNodeInfo.path}`;
+        yield* introspectBusObject(bus, name, cancellable, interfaces, subPath);
     }
-
-    for (const result of await Promise.allSettled(requests)) {
-        if (result.status === 'fulfilled')
-            result.value.forEach(n => nodes.push(n));
-        else if (!result.reason.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.CANCELLED))
-            Logger.debug(`Impossible to get node info: ${result.reason}`);
-    }
-
-    return nodes;
 }
 
 function dbusNodeImplementsInterfaces(nodeInfo, interfaces) {
@@ -261,16 +253,29 @@ function disconnectSmart(...args) {
     throw new TypeError('Unexpected number of arguments');
 }
 
+let _defaultTheme;
 function getDefaultTheme() {
-    if (Gdk.Screen.get_default()) {
-        const defaultTheme = Gtk.IconTheme.get_default();
-        if (defaultTheme)
-            return defaultTheme;
+    if (_defaultTheme)
+        return _defaultTheme;
+
+    if (St.IconTheme) {
+        _defaultTheme = new St.IconTheme();
+        return _defaultTheme;
     }
 
-    const defaultTheme = new Gtk.IconTheme();
-    defaultTheme.set_custom_theme(St.Settings.get().gtk_icon_theme);
-    return defaultTheme;
+    if (Gdk.Screen && Gdk.Screen.get_default()) {
+        _defaultTheme = Gtk.IconTheme.get_default();
+        if (_defaultTheme)
+            return _defaultTheme;
+    }
+
+    _defaultTheme = new Gtk.IconTheme();
+    _defaultTheme.set_custom_theme(St.Settings.get().gtk_icon_theme);
+    return _defaultTheme;
+}
+
+function destroyDefaultTheme() {
+    _defaultTheme = null;
 }
 
 // eslint-disable-next-line valid-jsdoc
@@ -282,9 +287,11 @@ async function waitForStartupCompletion(cancellable) {
     if (Main.layoutManager._startingUp)
         await Main.layoutManager.connect_once('startup-complete', cancellable);
 
-    const displayManager = Gdk.DisplayManager.get();
-    if (!Meta.is_wayland_compositor() && !displayManager.get_default_display())
-        await displayManager.connect_once('display-opened', cancellable);
+    if (!St.IconTheme && !Meta.is_wayland_compositor()) {
+        const displayManager = Gdk.DisplayManager.get();
+        if (displayManager && !displayManager.get_default_display())
+            await displayManager.connect_once('display-opened', cancellable);
+    }
 }
 
 /**
@@ -388,6 +395,7 @@ function versionCheck(required) {
 }
 
 function tryCleanupOldIndicators() {
+    const IndicatorStatusIcon = Extension.imports.indicatorStatusIcon;
     const indicatorType = IndicatorStatusIcon.BaseStatusIcon;
     const indicators = Object.values(Main.panel.statusArea).filter(i => i instanceof indicatorType);
 
@@ -461,3 +469,104 @@ class CancellableChild extends Gio.Cancellable {
         this._realCancel();
     }
 });
+
+var DBusProxy = GObject.registerClass({
+    Signals: { 'destroy': {} },
+}, class DBusProxy extends Gio.DBusProxy {
+    static get TUPLE_VARIANT_TYPE() {
+        if (!this._tupleVariantType)
+            this._tupleVariantType = new GLib.VariantType('(v)');
+
+        return this._tupleVariantType;
+    }
+
+    static destroy() {
+        delete this._tupleType;
+    }
+
+    _init(busName, objectPath, interfaceInfo, flags = Gio.DBusProxyFlags.NONE) {
+        if (interfaceInfo.signals.length)
+            Logger.warn('Avoid exposing signals to gjs!');
+
+        super._init({
+            gConnection: Gio.DBus.session,
+            gInterfaceName: interfaceInfo.name,
+            gInterfaceInfo: interfaceInfo,
+            gName: busName,
+            gObjectPath: objectPath,
+            gFlags: flags,
+        });
+
+        this._signalIds = [];
+
+        if (!(flags & Gio.DBusProxyFlags.DO_NOT_CONNECT_SIGNALS)) {
+            this._signalIds.push(this.connect('g-signal',
+                (_proxy, ...args) => this._onSignal(...args)));
+        }
+
+        this._signalIds.push(this.connect('notify::g-name-owner', () =>
+            this._onNameOwnerChanged()));
+    }
+
+    async initAsync(cancellable) {
+        cancellable = new CancellableChild(cancellable);
+        await this.init_async(GLib.PRIORITY_DEFAULT, cancellable);
+        this._cancellable = cancellable;
+
+        this.gInterfaceInfo.methods.map(m => m.name).forEach(method =>
+            this._ensureAsyncMethod(method));
+    }
+
+    destroy() {
+        this.emit('destroy');
+
+        this._signalIds.forEach(id => this.disconnect(id));
+
+        if (this._cancellable)
+            this._cancellable.cancel();
+    }
+
+    // This can be removed when we will have GNOME 43 as minimum version
+    _ensureAsyncMethod(method) {
+        if (this[`${method}Async`])
+            return;
+
+        if (!this[`${method}Remote`])
+            throw new Error(`Missing remote method '${method}'`);
+
+        this[`${method}Async`] = function (...args) {
+            return new Promise((resolve, reject) => {
+                this[`${method}Remote`](...args, (ret, e) => {
+                    if (e)
+                        reject(e);
+                    else
+                        resolve(ret);
+                });
+            });
+        };
+    }
+
+    _onSignal() {
+    }
+
+    getProperty(propertyName, cancellable) {
+        return this.gConnection.call(this.gName,
+            this.gObjectPath, 'org.freedesktop.DBus.Properties', 'Get',
+            GLib.Variant.new('(ss)', [this.gInterfaceName, propertyName]),
+            DBusProxy.TUPLE_VARIANT_TYPE, Gio.DBusCallFlags.NONE, -1,
+            cancellable);
+    }
+
+    getProperties(cancellable) {
+        return this.gConnection.call(this.gName,
+            this.gObjectPath, 'org.freedesktop.DBus.Properties', 'GetAll',
+            GLib.Variant.new('(s)', [this.gInterfaceName]),
+            GLib.VariantType.new('(a{sv})'), Gio.DBusCallFlags.NONE, -1,
+            cancellable);
+    }
+});
+
+if (imports.system.version < 17101) {
+    /* In old versions wrappers are not applied to sub-classes, so let's do it */
+    DBusProxy.prototype.init_async = Gio.DBusProxy.prototype.init_async;
+}

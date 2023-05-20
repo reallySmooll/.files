@@ -164,13 +164,16 @@ var DockAbstractAppIcon = GObject.registerClass({
                 this.remove_style_class_name('focused');
         });
 
+        const { notificationsMonitor } = Docking.DockManager.getDefault();
+
         this.connect('notify::urgent', () => {
             const icon = this.icon._iconBin;
             this._signalsHandler.removeWithLabel(Labels.URGENT_WINDOWS);
             if (this.urgent) {
-                if (Docking.DockManager.settings.danceUrgentApplications) {
+                if (Docking.DockManager.settings.danceUrgentApplications &&
+                    notificationsMonitor.enabled) {
                     icon.set_pivot_point(0.5, 0.5);
-                    this.iconAnimator.addAnimation(icon, 'dance');
+                    this.iconAnimator.addAnimation(icon, 'wiggle');
                 }
                 if (this.running && !this._urgentWindows.size) {
                     const urgentWindows = this.getInterestingWindows();
@@ -178,7 +181,7 @@ var DockAbstractAppIcon = GObject.registerClass({
                     this._updateUrgentWindows(urgentWindows);
                 }
             } else {
-                this.iconAnimator.removeAnimation(icon, 'dance');
+                this.iconAnimator.removeAnimation(icon, 'wiggle');
                 icon.rotation_angle_z = 0;
                 this._urgentWindows.forEach(w => delete w._manualUrgency);
                 this._updateUrgentWindows();
@@ -189,10 +192,13 @@ var DockAbstractAppIcon = GObject.registerClass({
         this._progressOverlayArea = null;
         this._progress = 0;
 
-        const keys = ['apply-custom-theme',
-            'running-indicator-style'];
-
-        keys.forEach(key => {
+        [
+            'apply-custom-theme',
+            'running-indicator-style',
+            'show-icons-emblems',
+            'show-icons-notifications-counter',
+            'application-counter-overrides-notifications',
+        ].forEach(key => {
             this._signalsHandler.add(
                 Docking.DockManager.settings,
                 `changed::${key}`, () => {
@@ -200,6 +206,11 @@ var DockAbstractAppIcon = GObject.registerClass({
                     this._indicator = new AppIconIndicators.AppIconIndicator(this);
                 }
             );
+        });
+
+        this._signalsHandler.add(notificationsMonitor, 'state-changed', () => {
+            this._indicator.destroy();
+            this._indicator = new AppIconIndicators.AppIconIndicator(this);
         });
 
         this._updateState();
@@ -682,7 +693,8 @@ var DockAbstractAppIcon = GObject.registerClass({
 
     shouldShowTooltip() {
         return this.hover && (!this._menu || !this._menu.isOpen) &&
-                            (!this._previewMenu || !this._previewMenu.isOpen);
+                            (!this._previewMenu || !this._previewMenu.isOpen) &&
+                            !Docking.DockManager.settings.hideTooltip;
     }
 
     _windowPreviews() {
