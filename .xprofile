@@ -1,0 +1,11 @@
+python3 /home/smoolldev/SmoollDev/Development/Python/OpenRazer/multicolor.py &
+/home/smoolldev/dotfiles/suckless/status/status.sh &
+
+nitrogen --restore &
+redshift-gtk -l 54.00696:15.98751 -t 6500:3500 &
+picom --config /home/smoolldev/.config/picom/picom.conf &
+
+nm-applet &
+blueman-applet &
+volctl &
+polychromatic-tray-applet &
