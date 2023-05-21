@@ -14,7 +14,7 @@ begin()
 
     echo
     echo In about... right now, my files and any other programs I need to live with Linux will polute your system.
-    echo This script will provide results only if you\'ve used my \"archinstall\" config which installs all needed programs.
+    echo It\'s recomended that you install your Arch system using \"archinstall\".
 
     echo
     echo If you\'d like to stop the process of pollution, you can! \(unfortunately...\)
