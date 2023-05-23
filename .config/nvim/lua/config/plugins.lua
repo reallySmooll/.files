@@ -57,17 +57,22 @@ packer.startup(function()
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }) 							  -- Syntax highlighting
 	use({ 'folke/trouble.nvim', requires = 'nvim-web-devicons' })							  -- Errors
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = ':make' })						  -- Fuzzy finder
-	use({ 'tzachar/fuzzy.nvim', requires = 'nvim-telescope/telescope-fzf-native.nvim' })	  --
+	use({ 'tzachar/fuzzy.nvim', requires = 'nvim-telescope/telescope-fzf-native.nvim' })	  -- Fuzzy finder for cmp-
 	use({ 'tzachar/cmp-fuzzy-path', requires = { 'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim' }}) -- Source for file autocompletion in cmd mode
 	use({ 'catppuccin/nvim', as = 'catppuccin' }) 											  -- Theme
 
-	use({ 'windwp/nvim-autopairs', config = function()
-		require('nvim-autopairs').setup {}
-	end })
-	use({ 'willothy/nvim-cokeline', requires = 'nvim-web-devicons', config = function()
+	use({ 'windwp/nvim-autopairs',
+		config = function() 
+			require('nvim-autopairs').setup {}
+	end }) 																					  -- Look at the name lol
+	use({ 'willothy/nvim-cokeline', requires = 'nvim-web-devicons',
+		config = function()
 			require('cokeline').setup()
-		end
-	})
+	end }) 																				      -- Buffer line
+	use({ 'folke/todo-comments.nvim', requires = 'nvim-lua/plenary.nvim',
+		config = function ()
+			require('todo-comments').setup {}
+	end })			  											  						      -- Look at the name lol
 
 	if packer_bootstrap then
 		require('packer').sync()

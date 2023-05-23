@@ -58,8 +58,11 @@ for i = 1,9 do
   mapkey('n', ('<Leader>%s'):format(i), ('<Plug>(cokeline-switch-%s)'):format(i), { silent = true })
 end
 
--- Open CHADtree
+-- Open nvim-tree
 mapkey('n', '<Leader>o', '<CMD>NvimTreeToggle<CR>', { noremap = true })
+
+-- Open todo-comments
+mapkey('n', '<Leader>t', '<CMD>TodoTrouble<CR>', { noremap = true })
 
 -- LSP
 vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)

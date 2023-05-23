@@ -4,6 +4,10 @@ python3 /home/smoolldev/SmoollDev/Development/Python/OpenRazer/multicolor.py &
 nitrogen --restore &
 redshift-gtk -l 54.00696:15.98751 -t 6500:3500 &
 picom --config /home/smoolldev/.config/picom/picom.conf &
+conky &
+systemctl --user import-environment DISPLAY &
+clipmenud &
+ibus-daemon -drxRn dwm
 
 nm-applet &
 blueman-applet &

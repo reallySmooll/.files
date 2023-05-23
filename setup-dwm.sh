@@ -80,7 +80,7 @@ install_programs()
     install_packer
     install_dwm
     install_dmenu
-    install_gdm
+    install_lightdm
 }
 
 install_yay()
@@ -288,7 +288,13 @@ copy_everything_else()
     echo Copying 50-mouse-acceleration.conf
 
     sudo mkdir -p /etc/X11/xorg.conf.d
-    sudo ./etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
+    sudo cp ./etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
+
+    echo Copying environment...
+    sudo cp ./etc/environment /etc/environment
+
+    echo Changing shell to fish...
+    chsh
 
     echo Successfully copied everything!
 
