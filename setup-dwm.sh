@@ -80,6 +80,7 @@ install_programs()
     install_packer
     install_dwm
     install_dmenu
+    install_dwmblocks
     install_lightdm
 }
 
@@ -120,7 +121,7 @@ install_pkglist()
     echo Successfully installed programs from pkglist.pacman!
     echo Installing programs from pkglist.yay...
 
-    sudo yay -S --needed --noconfirm - < ./pkglist.yay
+    yay -S --needed --noconfirm - < ./pkglist.yay
     sleep 2
 
     clear
@@ -154,6 +155,14 @@ install_packer()
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+    echo Installing neovim plugins...
+    nvim --headless +PackerSync +qa
+
+    echo Compiling telescope-fzf-native.nvim
+    cd ~/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim/
+    make
+    cd ~/dotfiles
+
     echo Successfully installed packer!
 
     sleep 2
@@ -165,8 +174,7 @@ install_dwm()
 
     echo Installing dwm...
 
-    cd /home/smoolldev/dotfiles/suckless/dwm/
-    make
+    cd ~/dotfiles/suckless/dwm/
     sudo make clean install
     cd ../..
 
@@ -181,14 +189,24 @@ install_dmenu()
 
     echo Installing dmenu...
 
-    cd /home/smoolldev/dotfiles/suckless/dmenu/
-    make
+    cd ~/dotfiles/suckless/dmenu/
     sudo make clean install
     cd ../..
 
     echo Successfully installed dmenu!
 
     sleep 2
+}
+
+install_dwmblocks()
+{
+    clear
+
+    echo Installing dwmblocks...
+
+    cd ~/dotfiles/suckless/dwmblocks_async
+    sudo make clean install
+    cd ../..
 }
 
 install_lightdm()
@@ -199,19 +217,29 @@ install_lightdm()
 
     sudo pacman -S --needed lightdm
 
+    echo
     echo Installing web-greeter...
 
     yay -S web-greeter
 
-    echo Successfully installed web-greeter...
+    echo
+    echo Successfully installed web-greeter!
+    echo Installing neon theme...
+
+    yay -S lightdm-theme-neon-git
+
+    echo
+    echo Successfully installed neon!
     echo Copying web-greeter config from etc/lightdm/web-greeter.yml
 
     sudo cp ./etc/lightdm/web-greeter.yml /etc/lightdm
 
+    echo
     echo Enabling lightdm.service
 
     sudo systemctl enable lightdm
 
+    echo
     echo Successfully installed LightDM!
 
     sleep 2
@@ -224,19 +252,28 @@ copy_configs()
     echo Copying configs from .config...
 
     mkdir ~/.config/
-    cp ./.config/* ~/.config/
+    cp -r ./.config/* ~/.config/
 
+    echo
     echo Copied configs from .config!
     echo Copying configs from gnome/.config...
 
-    cp ./gnome/.config/* ~/.config/
+    cp -r ./gnome/.config/* ~/.config/
 
+    echo
     echo Copied configs from gnome/.config!
     echo Copying etc/lightdm/lightdm.conf
 
     sudo cp ./etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
 
-    echo Successfully copied etc/lightdm/lightdm.conf
+    echo
+    echo Successfully copied etc/lightdm/lightdm.conf!
+    echo Copying rofi config...
+
+    cp ./.config/rofi ~/.config/
+
+    echo
+    echo Successfully copied rofi config!
 
     sleep 2
 }
@@ -249,10 +286,10 @@ copy_themes_and_icons()
 
     sudo mkdir -p /usr/share/themes /usr/share/icons
     sudo rm -rf /usr/share/icons/default
-    sudo cp ./usr/share/icons/* /usr/share/icons
-    sudo cp ./usr/share/themes/* /usr/share/themes
+    sudo cp -r ./usr/share/icons/* /usr/share/icons
+    sudo cp -r ./usr/share/themes/* /usr/share/themes
     rm -rf ~/.icons ~/.themes
-    cp ./.icons ./.themes ~/
+    cp -r ./.icons ./.themes ~/
 
     echo Successfully copied themes and icons!
 
@@ -265,7 +302,7 @@ copy_fonts()
 
     echo Copying fonts...
 
-    cp ./.local/share/fonts ~/.local/share
+    cp -r ./.local/share/fonts ~/.local/share
 
     echo Successfully copied fonts!
 
@@ -280,21 +317,29 @@ copy_everything_else()
 
     cp ./.xprofile ~/
 
+    echo
     echo Copying dwm.desktop...
 
     sudo mkdir -p /usr/share/xsessions
     cp ./usr/share/xsessions/dwm.desktop
 
+    echo
     echo Copying 50-mouse-acceleration.conf
 
     sudo mkdir -p /etc/X11/xorg.conf.d
     sudo cp ./etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
+    echo
     echo Copying environment...
     sudo cp ./etc/environment /etc/environment
 
-    echo Changing shell to fish...
-    chsh
+    echo
+    echo Starting bluetooth service...
+    sudo systemctl enable bluetooth
+
+    echo
+    echo Starting cpupower service
+    sudo systemctl enable cpupower
 
     echo Successfully copied everything!
 

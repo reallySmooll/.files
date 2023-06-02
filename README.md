@@ -15,3 +15,6 @@ $ chmod +x ./setup-*.sh
 This should make the scripts executable, and you'll be able to run them.
 
 If there's some other error, then sorry, but I can't help you. I haven't tested these scripts yet.
+
+## Credits
+Rofi theme shamelessly copied from (adi1090x/rofi)[https://www.github.com/adi1090x/rofi]'s type-7 style-1.rasi.

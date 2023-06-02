@@ -4,22 +4,22 @@
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 15;        /* gaps between windows */
+static const unsigned int gappx     = 15;       /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const unsigned int systrayspacing = 5;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka Nerd Font Mono:size=14" };
-static const char dmenufont[]       = "Iosevka Nerd Font Mono:size=14";
+static const int showbar            = 1;        /* 0 means no standard bar */
+static const int topbar             = 1;        /* 0 means standard bar at bottom */
+static const char *fonts[]          = { "Ubuntu Nerd Font:size=14" };
+static const char dmenufont[]       = "Ubuntu Nerd Font:size=14";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#ffffff";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#ff0000";
+static const char col_cyan[]        = "#ec273f";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -27,7 +27,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "</>", "🌐", "♫" };
+static const char *tags[] = { "", "󰖟", "󰎈", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -64,19 +64,28 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
+#define STATUSBAR "dwmblocks"
+
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "kitty", NULL };
-static const char *clipmenu[] = { "clipmenu", NULL };
+static const char *dmenucmd[] 	   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *termcmd[]  	   = { "kitty", NULL };
+static const char *clipmenu[] 	   = { "clipmenu", NULL };
+static const char *caja[] 	  	   = { "caja", NULL };
+static const char *rofi[] 	       = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/config.rasi", NULL };
+static const char *brightness_1[]  = { "brightnessctl", "set", "1", NULL };
+static const char *brightness_15[] = { "brightnessctl", "set", "15", NULL };
 
 #include "exitdwm.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,  			XK_p,  	   spawn,          {.v = clipmenu } },
+	{ MODKEY|ShiftMask, 			XK_p, 	   spawn, 		   {.v = rofi } },
+	{ MODKEY|ControlMask|ShiftMask, XK_p,  	   spawn,          {.v = clipmenu } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask, 			XK_b, 	   spawn, 		   {.v = brightness_1} },
+	{ MODKEY|ControlMask|ShiftMask, XK_b, 	   spawn, 		   {.v = brightness_15} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -111,6 +120,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask, 			XK_e,      exitdwm,        {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_e, 	   spawn, 		   {.v = caja} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 	{ MODKEY, 						XK_s, 	   togglesticky,   {0} }
@@ -123,7 +133,9 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },
+	{ ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },
+	{ ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },

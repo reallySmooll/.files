@@ -4,6 +4,7 @@ bleachbit
 blueman
 bluez-utils
 brightnessctl
+caja
 clipnotify
 cmake
 conky
@@ -30,16 +31,17 @@ ibus
 kitty
 lightdm
 lxappearance
+lxsession
 man-db
 mpv
 neofetch
 neovim
+network-manager-applet
 nitrogen
 noto-fonts-emoji
 ntfs-3g
 pacman-contrib
 pavucontrol
-pcmanfm
 picom
 python-pip
 redshift
@@ -47,5 +49,8 @@ ripgrep
 simple-scan
 steam
 tree-sitter
+unzip
 vim
+xclip
 xf86-video-intel
+xorg-xsetroot
