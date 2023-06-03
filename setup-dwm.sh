@@ -206,7 +206,13 @@ install_dwmblocks()
 
     cd ~/dotfiles/suckless/dwmblocks_async
     sudo make clean install
-    cd ../..
+
+    echo
+    echo Successfully installed dwmblocks!
+
+    cd modules
+    ./install.sh
+    cd ../../..
 }
 
 install_lightdm()
