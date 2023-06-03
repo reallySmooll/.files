@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo $(df -h | awk 'FNR==5{ print "󰋊 "$2"/"$3 " " "("$4")" }')
