@@ -236,6 +236,13 @@ copy_configs()
 
     echo
     echo Successfully installed rofi config!
+    echo Installing SSH config...
+
+    mkdir -p ~/.ssh/
+    cp ./.ssh/config ~/.ssh/
+
+    echo
+    echo Successfully installed SSH config!
 
     sleep 2
 }
