@@ -236,7 +236,7 @@ install_lightdm()
 
     echo
     echo Successfully installed neon!
-    echo Copying web-greeter config from etc/lightdm/web-greeter.yml
+    echo Installing web-greeter config...
 
     sudo cp ./etc/lightdm/web-greeter.yml /etc/lightdm
 
@@ -255,31 +255,31 @@ copy_configs()
 {
     clear
 
-    echo Copying configs from .config...
+    echo Installing configs from .config...
 
     mkdir ~/.config/
     cp -r ./.config/* ~/.config/
 
     echo
-    echo Copied configs from .config!
-    echo Copying configs from gnome/.config...
+    echo Successfully installed configs from .config!
+    echo Installing configs from gnome/.config...
 
     cp -r ./gnome/.config/* ~/.config/
 
     echo
-    echo Copied configs from gnome/.config!
-    echo Copying etc/lightdm/lightdm.conf
+    echo Successfully installed configs from gnome/.config!
+    echo Installing etc/lightdm/lightdm.conf
 
     sudo cp ./etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
 
     echo
-    echo Successfully copied etc/lightdm/lightdm.conf!
-    echo Copying rofi config...
+    echo Successfully installed etc/lightdm/lightdm.conf!
+    echo Installing rofi config...
 
     cp ./.config/rofi ~/.config/
 
     echo
-    echo Successfully copied rofi config!
+    echo Successfully installed rofi config!
 
     sleep 2
 }
@@ -288,7 +288,7 @@ copy_themes_and_icons()
 {
     clear
 
-    echo Copying themes and icons...
+    echo Installing themes and icons...
 
     sudo mkdir -p /usr/share/themes /usr/share/icons
     sudo rm -rf /usr/share/icons/default
@@ -297,7 +297,7 @@ copy_themes_and_icons()
     rm -rf ~/.icons ~/.themes
     cp -r ./.icons ./.themes ~/
 
-    echo Successfully copied themes and icons!
+    echo Successfully installed themes and icons!
 
     sleep 2
 }
@@ -306,11 +306,11 @@ copy_fonts()
 {
     clear
 
-    echo Copying fonts...
+    echo Installing fonts...
 
     cp -r ./.local/share/fonts ~/.local/share
 
-    echo Successfully copied fonts!
+    echo Successfully installed fonts!
 
     sleep 2
 }
@@ -319,24 +319,24 @@ copy_everything_else()
 {
     clear
 
-    echo Copying .xprofile...
+    echo Installing .xprofile...
 
     cp ./.xprofile ~/
 
     echo
-    echo Copying dwm.desktop...
+    echo Installing dwm.desktop...
 
     sudo mkdir -p /usr/share/xsessions
     cp ./usr/share/xsessions/dwm.desktop
 
     echo
-    echo Copying 50-mouse-acceleration.conf
+    echo Installing 50-mouse-acceleration.conf
 
     sudo mkdir -p /etc/X11/xorg.conf.d
     sudo cp ./etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
     echo
-    echo Copying environment...
+    echo Installing environment...
     sudo cp ./etc/environment /etc/environment
 
     echo
@@ -347,7 +347,8 @@ copy_everything_else()
     echo Starting cpupower service
     sudo systemctl enable cpupower
 
-    echo Successfully copied everything!
+    echo
+    echo Successfully installed everything!
 
     sleep 2
 }

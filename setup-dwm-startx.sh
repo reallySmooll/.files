@@ -10,7 +10,7 @@ begin()
     echo NOTE: MAKE SURE YOU RUN THIS SCRIPT INSIDE OF THE DOTFILES FOLDER.
 
     echo
-    echo Welcome to the \"Smooll but Advanced Dotfiles Setup System\" or \"SADSS\" for short! \(GNOME Edition\)
+    echo Welcome to the \"Smooll but Advanced Dotfiles Setup System\" or \"SADSS\" for short! \(dwm-startx Edition\)
 
     echo
     echo In about... right now, my files and any other programs I need to live with Linux will polute your system.
@@ -66,9 +66,6 @@ start_setup()
     copy_fonts
     copy_everything_else
 
-    # GNOME Edition
-    copy_gnome_extensions
-
     return
 }
 
@@ -81,6 +78,9 @@ install_programs()
     install_pkglist
     install_starship
     install_packer
+    install_dwm
+    install_dmenu
+    install_dwmblocks
 }
 
 install_yay()
@@ -120,7 +120,7 @@ install_pkglist()
     echo Successfully installed programs from pkglist.pacman!
     echo Installing programs from pkglist.yay...
 
-    sudo yay -S --needed --noconfirm - < ./pkglist.yay
+    yay -S --needed --noconfirm - < ./pkglist.yay
     sleep 2
 
     clear
@@ -138,8 +138,7 @@ install_starship()
 
     curl -sS https://starship.rs/install.sh | sh
 
-    clear
-
+    echo
     echo Successfully installed starship.rs!
 
     sleep 2
@@ -154,40 +153,89 @@ install_packer()
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+    echo Installing neovim plugins...
+    nvim --headless +PackerSync +qa
+
+    echo Compiling telescope-fzf-native.nvim
+    cd ~/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim/
+    make
+    cd ~/dotfiles
+
     echo Successfully installed packer!
 
     sleep 2
+}
+
+install_dwm()
+{
+    clear
+
+    echo Installing dwm...
+
+    cd ~/dotfiles/suckless/dwm/
+    sudo make clean install
+    cd ../..
+
+    echo Successfully installed dwm!
+
+    sleep 2
+}
+
+install_dmenu()
+{
+    clear
+
+    echo Installing dmenu...
+
+    cd ~/dotfiles/suckless/dmenu/
+    sudo make clean install
+    cd ../..
+
+    echo Successfully installed dmenu!
+
+    sleep 2
+}
+
+install_dwmblocks()
+{
+    clear
+
+    echo Installing dwmblocks...
+
+    cd ~/dotfiles/suckless/dwmblocks_async
+    sudo make clean install
+
+    echo
+    echo Successfully installed dwmblocks!
+
+    cd modules
+    ./install.sh
+    cd ../../..
 }
 
 copy_configs()
 {
     clear
 
-    echo Installing configs from .config...
+    echo Installing configs...
 
     mkdir ~/.config/
-    cp ./.config/* ~/.config/
+    cp -r ./.config/* ~/.config/
 
-    echo Successfully installed configs from .config!
-    echo Installing configs from gnome/.config...
+    echo
+    echo Successfully installed configs!
+    echo Installing GTK configs...
 
-    cp ./gnome/.config/* ~/.config/
+    cp -r ./gnome/.config/* ~/.config/
 
-    echo Successfully installed configs from gnome/.config!
+    echo
+    echo Successfully installed GTK configs!
+    echo Installing rofi config...
 
-    sleep 2
-}
+    cp ./.config/rofi ~/.config/
 
-copy_gnome_extensions()
-{
-    clear
-
-    echo Installing GNOME extensions from gnome/.local/share/gnome-shell/extensions...
-
-    mkdir -p ~/.local/share/gnome-shell/
-    cp ./gnome/local/share/gnome-shell/extensions ~/.local/share/gnome-shell
-
-    echo Successfully installed GNOME extensions!
+    echo
+    echo Successfully installed rofi config!
 
     sleep 2
 }
@@ -200,10 +248,10 @@ copy_themes_and_icons()
 
     sudo mkdir -p /usr/share/themes /usr/share/icons
     sudo rm -rf /usr/share/icons/default
-    sudo cp ./usr/share/icons/* /usr/share/icons
-    sudo cp ./usr/share/themes/* /usr/share/themes
+    sudo cp -r ./usr/share/icons/* /usr/share/icons
+    sudo cp -r ./usr/share/themes/* /usr/share/themes
     rm -rf ~/.icons ~/.themes
-    cp ./.icons ./.themes ~/
+    cp -r ./.icons ./.themes ~/
 
     echo Successfully installed themes and icons!
 
@@ -216,9 +264,9 @@ copy_fonts()
 
     echo Installing fonts...
 
-    cp ./.local/share/fonts ~/.local/share
+    cp -r ./.local/share/fonts ~/.local/share
 
-    echo Successfully installed fonts!
+    echo Successfully installing fonts!
 
     sleep 2
 }
@@ -227,11 +275,40 @@ copy_everything_else()
 {
     clear
 
+    echo Installing .xprofile...
+
+    cp ./.xprofile ~/
+
+    echo
+    echo Installing .xinitrc
+
+    cp ./.xinitrc ~/
+
+    echo
+    echo Installing dwm.desktop...
+
+    sudo mkdir -p /usr/share/xsessions
+    cp ./usr/share/xsessions/dwm.desktop
+
+    echo
     echo Installing 50-mouse-acceleration.conf
 
     sudo mkdir -p /etc/X11/xorg.conf.d
-    sudo ./etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
+    sudo cp ./etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
+    echo
+    echo Installing environment...
+    sudo cp ./etc/environment /etc/environment
+
+    echo
+    echo Starting bluetooth service...
+    sudo systemctl enable bluetooth
+
+    echo
+    echo Starting cpupower service
+    sudo systemctl enable cpupower
+
+    echo
     echo Successfully installed everything!
 
     sleep 2
@@ -242,11 +319,9 @@ end()
     clear
 
     echo Finished installing my config!
+
+    echo
     echo If anything broke, then I\'m sorry, but I already told you that I\'m not responsible for any damage, so bye!
-
-    sleep 10
-
-    clear
 }
 
 # Call "begin()" and "end()".

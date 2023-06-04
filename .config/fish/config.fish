@@ -1,9 +1,15 @@
 # MISCELLANEOUS FUNCTIONS
 set fish_greeting # Suppress fish greeting message
-set fish_add_path /home/smoolldev/.local/bin/
 set -Ux EDITOR nvim
 set LD_BIND_NOW 1
 set LC_ALL C
+
+# Start X at login
+if status is-login
+	if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+		exec startx -- -keeptty
+	end
+end
 
 # START OF ALIASES
 alias "ls"="exa -laFh --icons --group-directories-first"
@@ -15,8 +21,8 @@ alias "github-init"="/home/smoolldev/SmoollDev/Development/Bash/github-init.sh"
 alias "scr-cap"="/home/smoolldev/record.sh"
 alias "grep"="grep -EinDskip --color=always"
 alias "count-lines"="/home/smoolldev/count_lines.sh"
-alias "dwm-build"="cd /home/smoolldev/dotfiles/suckless/dwm/ && make -j4 && sudo make clean install"
-alias "dmenu-build"="cd /home/smoolldev/dotfiles/suckless/dmenu/ && make -j4 && sudo make clean install"
+alias "dwm-build"="cd /home/smoolldev/dotfiles/suckless/dwm/ && sudo make clean install"
+alias "dmenu-build"="cd /home/smoolldev/dotfiles/suckless/dmenu/ && sudo make clean install"
 alias "pacinstall"="sudo pacman -S --needed"
 alias "yayinstall"="yay -S --needed"
 
@@ -49,3 +55,6 @@ end
 
 # STARSHIP INITIALIAZATION SCRIPT
 starship init fish | source
+
+# SSH agent
+fish_ssh_agent
