@@ -26,7 +26,7 @@ Here's a list of patches I have applied to my dwm:
 - bar height spacing - Custom height for dwmbar
 - fixborders - Fixes borders so that they're not transparent anymore
 - fullgaps - Adds gaps between windows
-- preserveonrestart - A fork of restoreafterrestart by [@FT_Labs](https://www.github.com/FT_Labs)
+- preserveonrestart - A fork of restoreafterrestart by [@FT-Labs](https://www.github.com/FT-Labs)
 - restartsig - Allows for dwm restart using MODKEY+Shift+Q instead of logging out and back in
 - statuscmd - Makes the status bar items clickable so you can open windows then clicking on them (or do other actions)
 - sticky - Sticks the window to the desktop so it stays between tags with MODKEY+S
