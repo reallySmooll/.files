@@ -8,7 +8,6 @@ bluez-utils
 brightnessctl
 caja
 check
-clipmenu
 clipnotify
 cmake
 cpupower
@@ -37,7 +36,6 @@ htop
 ibus
 irqbalance
 kitty
-lightdm
 lxappearance
 lxsession
 man-db
@@ -51,6 +49,7 @@ noto-fonts-emoji
 npm
 ntfs-3g
 pacman-contrib
+parcellite
 pavucontrol
 picom
 python-pip

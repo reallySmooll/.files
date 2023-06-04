@@ -347,6 +347,10 @@ copy_everything_else()
     sudo cp ./etc/environment /etc/environment
 
     echo
+    echo Installing powermenu.sh
+    sudo cp ./.config/rofi/powermenu.sh /usr/local/bin
+
+    echo
     echo Starting bluetooth service...
     sudo systemctl enable bluetooth
 

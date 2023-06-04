@@ -22,7 +22,7 @@ alias "scr-cap"="/home/smoolldev/record.sh"
 alias "grep"="grep -EinDskip --color=always"
 alias "count-lines"="/home/smoolldev/count_lines.sh"
 alias "dwm-build"="cd /home/smoolldev/dotfiles/suckless/dwm/ && sudo make clean install"
-alias "dmenu-build"="cd /home/smoolldev/dotfiles/suckless/dmenu/ && sudo make clean install"
+#alias "dmenu-build"="cd /home/smoolldev/dotfiles/suckless/dmenu/ && sudo make clean install"
 alias "pacinstall"="sudo pacman -S --needed"
 alias "yayinstall"="yay -S --needed"
 

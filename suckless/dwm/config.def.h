@@ -1,65 +1,74 @@
 /* See LICENSE file for copyright and license details. */
 
-#define SESSION_FILE "/tmp/dwm-session"
-
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 5;        /* gaps between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int borderpx  	 = 3;   /* border pixel of windows */
+static const unsigned int gappx     	 = 15;  /* gaps between windows */
+static const unsigned int snap      	 = 32;  /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const unsigned int systrayonleft  = 0;   /* 0: systray in the right corner, >0: systray on left of status text */
+static const unsigned int systrayspacing = 5;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 1;        /* 0 means no systray */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
-static const char *colors[][3]      = {
+static const int showsystray        	 = 1;   /* 0 means no systray */
+static const int showbar             	 = 1;   /* 0 means no standard bar */
+static const int topbar             	 = 1;   /* 0 means standard bar at bottom */
+static const int user_bh            	 = 6;        /* 2 is the default spacing around the bar's font */
+static const unsigned int colorfultag    = 1;   /* 0 means use SchemeSel for selected tag */
+static const char *fonts[]          	 = { "Ubuntu Nerd Font:size=14" };
+static const char dmenufont[]       	 = "Ubuntu Nerd Font:size=14";
+static const char col_gray1[]        	 = "#222222";
+static const char col_gray2[]       	 = "#444444";
+static const char col_gray3[]       	 = "#ffffff";
+static const char col_gray4[]       	 = "#eeeeee";
+static const char col_cyan[]        	 = "#ec273f";
+static const char col_black[] 			 = "#000000";
+static const char col_white[] 			 = "#ffffff";
+static const char *colors[][3]      	 = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm]   = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]    = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeTag]    = { col_gray4, col_gray1, col_black },
+    [SchemeTag1]   = { "#ff0000", col_gray1, col_black },
+	[SchemeTag2]   = { "#ff7f00", col_gray1, col_black },
+    [SchemeTag3]   = { "#ffff00", col_gray1, col_black },
+    [SchemeTag4]   = { "#00ff00", col_gray1, col_black },
+    [SchemeTag5]   = { "#0000ff", col_gray1, col_black },
+	[SchemeTag6]   = { "#4b0082", col_gray1, col_black },
+	[SchemeTag7]   = { "#9400d3", col_gray1, col_black },
+	[SchemeTag8]   = { col_white, col_gray1, col_black },
+	[SchemeTag9]   = { col_black, col_gray1, col_black },
+	[SchemeLayout] = { col_white, col_gray1, col_black }
 };
+
+#define ICONSIZE 22   /* icon size */
+#define ICONSPACING 5 /* space between icon and title */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "󰖟", "󰎈", "", "" };
 
-static const char *tagsel[][2] = {
-	{ "#ffffff", "#ff0000" },
-	{ "#ffffff", "#ff7f00" },
-	{ "#000000", "#ffff00" },
-	{ "#000000", "#00ff00" },
-	{ "#ffffff", "#0000ff" },
-	{ "#ffffff", "#4b0082" },
-	{ "#ffffff", "#9400d3" },
-	{ "#000000", "#ffffff" },
-	{ "#ffffff", "#000000" },
-};
+static const int tagschemes[] = { SchemeTag1, SchemeTag2, SchemeTag3,
+                                  SchemeTag4, SchemeTag5, SchemeTag6,
+                                  SchemeTag7, SchemeTag8, SchemeTag9 };
 
-static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
-static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
-static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
-static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
+static const unsigned int ulinepad	   = 5;	/* horizontal padding between the underline and tag */
+static const unsigned int ulinestroke  = 2;	/* thickness / height of the underline */
+static const unsigned int ulinevoffset = 0;	/* how far above the bottom of the bar the line should appear */
+static const int ulineall 			   = 0;
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class      instance    title       		 tags mask     isfloating   monitor */
+	{ "Gimp",     NULL,       NULL,              0,            1,           -1 },
+	{ "Firefox",  NULL,       NULL,      		 1 << 8,       0,           -1 },
+	{ "SGLSandbox", NULL, 	  NULL,  			 0, 		   1, 			-1 }
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const float mfact     	= 0.50; /* factor of master area size [0.05..0.95] */
+static const int nmaster     	= 1;    /* number of clients in master area */
+static const int resizehints    = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
@@ -70,7 +79,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -84,14 +93,22 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *dmenucmd[] 	   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *termcmd[]  	   = { "kitty", NULL };
+//static const char *clipmenu[] 	   = { "clipmenu", NULL };
+static const char *caja[] 	  	   = { "caja", NULL };
+static const char *rofi[] 	       = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/config.rasi", NULL };
+static const char *brightness_1[]  = { "brightnessctl", "set", "1", NULL };
+static const char *brightness_15[] = { "brightnessctl", "set", "15", NULL };
+static const char *powermenu[] 	   = { "powermenu.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask, 			XK_b, 	   spawn, 		   {.v = brightness_1 } },
+	{ MODKEY|ControlMask|ShiftMask, XK_b, 	   spawn, 		   {.v = brightness_15 } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -125,7 +142,11 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_e,      exitdwm,       {0} },
+	{ MODKEY|ShiftMask, 			XK_e, 	   spawn, 		   {.v = caja } },
+	{ MODKEY, 						XK_q, 	   spawn, 		   {.v = powermenu } },
+	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
+	{ MODKEY, 						XK_s, 	   togglesticky,   {0} }
 };
 
 /* button definitions */

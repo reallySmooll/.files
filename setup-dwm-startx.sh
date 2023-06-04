@@ -292,12 +292,6 @@ copy_everything_else()
     cp ./.xinitrc ~/
 
     echo
-    echo Installing dwm.desktop...
-
-    sudo mkdir -p /usr/share/xsessions
-    cp ./usr/share/xsessions/dwm.desktop
-
-    echo
     echo Installing 50-mouse-acceleration.conf
 
     sudo mkdir -p /etc/X11/xorg.conf.d
@@ -306,6 +300,10 @@ copy_everything_else()
     echo
     echo Installing environment...
     sudo cp ./etc/environment /etc/environment
+
+    echo
+    echo Installing powermenu.sh
+    sudo cp ./.config/rofi/powermenu.sh /usr/local/bin
 
     echo
     echo Starting bluetooth service...
