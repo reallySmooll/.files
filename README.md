@@ -37,4 +37,5 @@ Here's a list of patches I have applied to my dwm:
 
 ## Credits
 Rofi theme shamelessly copied from [adi1090x/rofi](https://www.github.com/adi1090x/rofi)'s type-7 style-1 launcher.
+
 Powermenu shamelessly copied from [adi1090x/rofi](https://www.github.com/adi1090x/rofi)'s type-6 style-1 powermenu.
