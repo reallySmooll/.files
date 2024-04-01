@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo $(df -h | awk 'FNR==5{ print "󰋊 "$2"/"$3 " " "("$4")" }')
+echo $(duf -only local -output size,used,avail | awk 'FNR==6{ print "󰋊 "$2"/"$4 " " "("$6")" }')

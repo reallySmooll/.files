@@ -1,41 +1,41 @@
 #!/bin/bash
 
-_battery=$(acpi -b | awk '{ print int($4) }' | sed "s/,//" | sed "s/%//")
+_battery=$(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print int($0) }')
 
 if [ $_battery -eq 100 ]
 then
-    echo $(acpi -b | awk '{ print "󰁹 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󰁹 "$0"%" }')
 elif [ $_battery -gt 90 ] && [ $_battery -lt 100 ] || [ $_battery -eq 90 ]
 then
-    echo $(acpi -b | awk '{ print "󰂂 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󰂂 "$0"%" }')
 elif [ $_battery -gt 80 ] && [ $_battery -lt 90 ] || [ $_battery -eq 80 ]
 then
-    echo $(acpi -b | awk '{ print "󰂁 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󰂁 "$0"%" }')
 elif [ $_battery -gt 70 ] && [ $_battery -lt 80 ] || [ $_battery -eq 70 ]
 then
-    echo $(acpi -b | awk '{ print "󰂀 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󰂀 "$0"%" }')
 elif [ $_battery -gt 60 ] && [ $_battery -lt 70 ] || [ $_battery -eq 60 ]
 then
-    echo $(acpi -b | awk '{ print "󰁿 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󰁿 "$0"%" }')
 elif [ $_battery -gt 50 ] && [ $_battery -lt 60 ] || [ $_battery -eq 50 ]
 then
-    echo $(acpi -b | awk '{ print "󰁾 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󰁾 "$0"%" }')
 elif [ $_battery -gt 40 ] && [ $_battery -lt 50 ] || [ $_battery -eq 40 ]
 then
-    echo $(acpi -b | awk '{ print "󰁽 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󰁽 "$0"%" }')
 elif [ $_battery -gt 30 ] && [ $_battery -lt 40 ] || [ $_battery -eq 30 ]
 then
-    echo $(acpi -b | awk '{ print "󰁼 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󰁼 "$0"%" }')
 elif [ $_battery -gt 20 ] && [ $_battery -lt 30 ] || [ $_battery -eq 20 ]
 then
-    echo $(acpi -b | awk '{ print "󰁻 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󰁻 "$0"%" }')
 elif [ $_battery -gt 10 ] && [ $_battery -lt 20 ] || [ $_battery -eq 10 ]
 then
-    echo $(acpi -b | awk '{ print "󰁺 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󰁺 "$0"%" }')
 elif [ $_battery -gt 0 ] && [ $_battery -lt 10 ]
 then
-    echo $(acpi -b | awk '{ print "󰂎 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󰂎 "$0"%" }')
 elif [ $_battery -eq 0 ]
 then
-    echo $(acpi -b | awk '{ print "󱉞 "$4 }' | sed "s/,//")
+    echo $(cat /sys/class/power_supply/axp288_fuel_gauge/capacity | awk '{ print "󱉞 "$0"%" }')
 fi

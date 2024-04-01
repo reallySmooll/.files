@@ -219,23 +219,12 @@ install_lightdm()
 {
     clear
 
-    echo Installing LightDM...
+    echo Installing LightDM, web-greeter and lightdm-theme-neon-git...
 
-    sudo pacman -S --needed lightdm
-
-    echo
-    echo Installing web-greeter...
-
-    yay -S web-greeter
+    yay -S lightdm web-greeter lightdm-theme-neon-git
 
     echo
-    echo Successfully installed web-greeter!
-    echo Installing neon theme...
-
-    yay -S lightdm-theme-neon-git
-
-    echo
-    echo Successfully installed neon!
+    echo Successfully installed LightDM, web-greeter and lightdm-theme-neon-git!
     echo Installing web-greeter config...
 
     sudo cp ./etc/lightdm/web-greeter.yml /etc/lightdm

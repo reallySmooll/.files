@@ -52,8 +52,27 @@ static const char *colors[][3]      	 = {
 #define ICONSIZE 22   /* icon size */
 #define ICONSPACING 5 /* space between icon and title */
 
+static const char *const autostart[] = {
+	"lxsession", "-s", "/usr/share/xsession/dwm.desktop", NULL,
+	"dwmblocks", NULL,
+	"nitrogen", "--restore", NULL,
+	"ibus-daemon", "-drxRn", "dwm", NULL,
+	"deadd-notification-center", NULL,
+	"systemctl", "--user", "import-environment", "DISPLAY", NULL,
+	"parcellite", NULL,
+	"redshift-gtk", "-l", "54.00696:15.98751", "-t", "6500:3500", NULL,
+	"xbindkeys", "-f", ".xbindkeysrc", NULL,
+	"nm-applet", NULL,
+	"blueman-applet", NULL,
+	"volctl", NULL,
+	"polychromatic-tray-applet", NULL,
+	"flameshot", NULL,
+	"python3", "/home/smoolldev/SmoollDev/Development/Python/OpenRazer/multicolor.py", NULL,
+	NULL /* terminate */
+};
+
 /* tagging */
-static const char *tags[] = { "", "󰖟", "󰝚", "󰃣", "", "" };
+static const char *tags[] = { "", "󰖟", "󰝚", "󰃣", "", "", "7", "8", "9" };
 
 static const int tagschemes[] = { SchemeTag1, SchemeTag2, SchemeTag3,
                                   SchemeTag4, SchemeTag5, SchemeTag6,
@@ -71,15 +90,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       		 tags mask     isfloating   monitor */
-	{ "Firefox",  NULL,       NULL,      		 1 << 8,       0,           -1 },
-	{ "SGLSandbox", NULL, 	  NULL,  			 0, 		   1, 			-1 }
+	/* class      	  instance   title   tags mask   isfloating   monitor */
+	{ "Eog", 		  NULL, 	 NULL,   0, 		 1, 		  -1 }
 };
 
 /* layout(s) */
 static const float mfact     	= 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     	= 1;    /* number of clients in master area */
 static const int resizehints    = 1;    /* 1 means respect size hints in tiled resizals */
+static const int decorhints  	= 1;    /* 1 means respect decoration hints */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
@@ -109,18 +128,16 @@ static const char *termcmd[]  	   = { "kitty", NULL };
 //static const char *clipmenu[] 	   = { "clipmenu", NULL };
 static const char *caja[] 	  	   = { "caja", NULL };
 static const char *rofi[] 	       = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/config.rasi", NULL };
-static const char *brightness_1[]  = { "brightnessctl", "set", "1", NULL };
-static const char *brightness_15[] = { "brightnessctl", "set", "15", NULL };
 static const char *powermenu[] 	   = { "powermenu.sh", NULL };
+static const char *picom[] 		   = { "picom" };
+static const char *kill_picom[]    = { "killall", "picom" };
 
 // Keys
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },
+	{ MODKEY,                       XK_r,      spawn,          {.v = rofi } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY|ShiftMask, 			XK_b, 	   spawn, 		   {.v = brightness_1 } },
-	{ MODKEY|ControlMask|ShiftMask, XK_b, 	   spawn, 		   {.v = brightness_15 } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -142,6 +159,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY, 						XK_Right,  viewnext,       {0} },
+	{ MODKEY, 						XK_Left,   viewprev,       {0} },
+	{ MODKEY|ShiftMask, 			XK_Right,  tagtonext,      {0} },
+	{ MODKEY|ShiftMask, 			XK_Left,   tagtoprev,      {0} },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
@@ -156,6 +177,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask, 			XK_e, 	   spawn, 		   {.v = caja } },
 	{ MODKEY, 						XK_q, 	   spawn, 		   {.v = powermenu } },
+	{ MODKEY, 						XK_n, 	   spawn, 		   SHCMD("kill -s USR1 $(pidof deadd-notification-center)") },
+	{ MODKEY, 						XK_p, 	   spawn, 		   {.v = picom } },
+	{ MODKEY|ShiftMask, 			XK_p, 	   spawn, 		   {.v = kill_picom } },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 	{ MODKEY, 						XK_s, 	   togglesticky,   {0} }
