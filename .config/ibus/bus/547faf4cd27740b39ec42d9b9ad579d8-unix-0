@@ -3,5 +3,5 @@
 # ibus session bus with the below address.
 # If the IBUS_ADDRESS environment variable is set, it will
 # be used rather than this file.
-IBUS_ADDRESS=unix:path=/home/smoolldev/.cache/ibus/dbus-jr6nidgY,guid=8d8ff7c0a224e2de404ac0b6647cb0a5
-IBUS_DAEMON_PID=44585
+IBUS_ADDRESS=unix:path=/home/smoolldev/.cache/ibus/dbus-RoLAUuF6,guid=8daee4a81b80ccc05853ac0c660af3f2
+IBUS_DAEMON_PID=955

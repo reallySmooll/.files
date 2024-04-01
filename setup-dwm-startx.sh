@@ -79,7 +79,6 @@ install_programs()
     install_starship
     install_packer
     install_dwm
-    install_dmenu
     install_dwmblocks
 }
 
@@ -177,21 +176,6 @@ install_dwm()
     cd ../..
 
     echo Successfully installed dwm!
-
-    sleep 2
-}
-
-install_dmenu()
-{
-    clear
-
-    echo Installing dmenu...
-
-    cd ~/dotfiles/suckless/dmenu/
-    sudo make clean install
-    cd ../..
-
-    echo Successfully installed dmenu!
 
     sleep 2
 }

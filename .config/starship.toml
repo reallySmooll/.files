@@ -1,5 +1,5 @@
 # Universal prompt
-format = "$username$hostname$all"
+format = '''[┌─](bold green)$username$hostname $battery[$character](bold green)in $all[└─>](bold green) '''
 
 # Inserts a blank line between shell prompts
 add_newline = false 
@@ -10,20 +10,20 @@ disabled = false
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[❯](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+success_symbol = "[](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 error_symbol = "[✖](bold red)"
 
 # Username
 [username]
 format = "[$user]($style)@"
 style_root = "bold #ff0000"
-style_user = "fg:#00ffff"
+style_user = "fg:#94a758"
 show_always = true
 
 # Hostname (computer name)
 [hostname]
-format = "[$hostname]($style) in "
-style = "fg:#fe015a"
+format = "[$hostname]($style)"
+style = "fg:#d1c7a1"
 ssh_only = false
 
 # Disable the package module, hiding it from the prompt completely

@@ -15,7 +15,8 @@ set.clipboard  	   = 'unnamedplus' -- Use system clipboard
 set.cursorline     = true	       -- Highlight current line
 set.termguicolors  = true	                         -- Enable true colors support
 set.relativenumber = true                            -- Show number relative to the line
-set.guicursor      = "n-v-c-sm-i-ci-ve-r-cr-o:block" -- Change cursor in normal, vertical and other modes to insert mode line
+set.guicursor      = 'n-v-c-sm-i-ci-ve-r-cr-o:block' -- Change cursor in normal, vertical and other modes to insert mode line
+set.timeoutlen     = 1000          -- Time to wait for mapped sequence to complete
 g.python_highlight_space_errors  = 0
 g.python_highlight_indent_errors = 0
 

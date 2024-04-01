@@ -1,23 +1,7 @@
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('clangd_extensions').setup {
-    server = {
-        cmd = {
-            'clangd',
-            '--header-insertion=never',
-            '--all-scopes-completion=true',
-            '--completion-style=bundled',
-            '--cross-file-rename',
-            '--enable-config',
-            '--pch-storage=disk',
-            '--header-insertion-decorators'
-        },
-        capabilities = capabilities
-    }
-}
-
-local lsps = { 'cmake', 'lua_ls' }
+local lsps = { 'cmake', 'lua_ls', 'tsserver', 'html', 'eslint', 'cssls', 'clangd' }
 for _, lsp in ipairs(lsps) do
     lspconfig[lsp].setup {
         capabilities = capabilities

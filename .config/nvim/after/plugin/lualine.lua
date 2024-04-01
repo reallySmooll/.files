@@ -1,40 +1,81 @@
+local colors = {
+  black = '#000000',
+  blue = '#89b4fb',
+  green = '#A6E3A2',
+  purple = '#CBA6F8',
+  red = '#F38BA8',
+  mute = '1e1e30',
+  dark = '#11111C',
+  white = '#ffffff'
+}
+
+local custom_theme = {
+  normal = {
+    a = { fg = colors.black, bg = colors.red  },
+    b = { fg = colors.red,   bg = colors.mute },
+    c = { fg = colors.red,   bg = colors.dark },
+    y = { fg = colors.red,   bg = colors.mute },
+    z = { fg = colors.black, bg = colors.red  }
+  },
+
+  insert = {
+    a = { fg = colors.black, bg = colors.green },
+    b = { fg = colors.green, bg = colors.mute  },
+    c = { fg = colors.green, bg = colors.dark  },
+    y = { fg = colors.green, bg = colors.mute  },
+    z = { fg = colors.black, bg = colors.green }
+  },
+  visual = {
+    a = { fg = colors.black,  bg = colors.purple },
+    b = { fg = colors.purple, bg = colors.mute   },
+    c = { fg = colors.purple, bg = colors.dark   },
+    y = { fg = colors.purple, bg = colors.mute   },
+    z = { fg = colors.black,  bg = colors.purple }
+  },
+  replace = {
+    a = { fg = colors.black, bg = colors.blue },
+    b = { fg = colors.blue,  bg = colors.mute },
+    c = { fg = colors.blue,  bg = colors.dark },
+    y = { fg = colors.blue,  bg = colors.mute },
+    z = { fg = colors.black, bg = colors.blue }
+  },
+
+  inactive = {
+    a = { fg = colors.red, bg = colors.mute },
+    z = { fg = colors.red, bg = colors.mute }
+  }
+}
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'catppuccin',
-    component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {}
-    },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar= 1000
-    },
+    theme = custom_theme,
+    --theme = 'catppuccin',
+    --component_separators = { left = '', right = '' },
+    --section_separators = { left = '', right = '' },
+    component_separators = '|',
+    section_separators = { left = '', right = '' }
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_a = {
+      { 'mode', separator = { left = '' }, right_padding = 2 }
+    },
+    lualine_b = { 'filename', 'branch' },
+    lualine_c = { 'fileformat' },
+    lualine_x = {},
+    lualine_y = { 'filetype', 'progress' },
+    lualine_z = {
+      { 'location', separator = { right = '' }, left_padding = 2 }
+    }
   },
   inactive_sections = {
-    lualine_a = {},
+    lualine_a = { 'filename' },
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_c = {},
+    lualine_x = {},
     lualine_y = {},
-    lualine_z = {}
+    lualine_z = { 'location' }
   },
   tabline = {},
-  winbar = {},
-  inactive_winbar = {},
   extensions = {}
 }

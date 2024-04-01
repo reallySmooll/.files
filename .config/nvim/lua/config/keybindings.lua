@@ -45,7 +45,7 @@ mapkey('n', '<LEADER>scl', '<CMD>wincmd l<CR>', { noremap = true })
 -->> END [ Split view commands ] <<--
 
 -- Toggle Trouble
-mapkey('n', '<LEADER>xx', '<CMD>TroubleToggle<CR>', { silent = true, noremap = true })
+mapkey('n', '<LEADER>a', '<CMD>TroubleToggle<CR>', { silent = true, noremap = true })
 
 -- Cokeline
 mapkey('n', '<S-Tab>',   '<Plug>(cokeline-focus-prev)',  { silent = true })
@@ -70,8 +70,22 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<Leader>q', vim.diagnostic.setloclist)
 
+-- Terminal
+mapkey('n', '<Leader>\\', '<CMD>ToggleTerm<CR>', { noremap = true })
+
 --[[ Insert Mode ]]--
 
 -- Pressing CTRL+BACKSPACE will remove the word
 mapkey('i', '<C-BS>', '<C-w>', { nil })
 mapkey('i', '<C-h>', '<C-w>', { nil })
+
+--[[ Visual Mode ]]--
+
+-- Comment
+mapkey('v', '<Leader>/', '<CMD>normal gcc<CR>', { noremap = true })
+
+--[[ Global ]]--
+
+-- Stop x and X from overwriting the clipboard
+mapkey('', '<Leader>x', '"_x', { noremap = true })
+mapkey('', '<Leader>X', '"_x', { noremap = true })

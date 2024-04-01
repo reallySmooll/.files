@@ -1,0 +1,334 @@
+Not enough permission to place log file at /var/log/archinstall/install.log, creating it in /home/smoolldev/dotfiles/install.log instead
+Hardware model detected: Intel Intel; UEFI mode: True
+Processor model detected: Intel(R) Atom(TM) x5-Z8350  CPU @ 1.44GHz
+Memory statistics: 519468 available out of 1923696 total installed
+Could not detect virtual system: ['/usr/bin/systemd-detect-virt'] exited with abnormal exit code [1]: none
+
+System is not running in a VM: ['/usr/bin/systemd-detect-virt'] exited with abnormal exit code [1]: none
+
+Virtualization detected: None; is VM: False
+Graphics devices detected: dict_keys(['Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Integrated Graphics Controller (rev 36)'])
+Disk states before installing: [
+    {
+        "children": [
+            {
+                "children": [],
+                "fsavail": 445939712,
+                "fsroots": [
+                    "."
+                ],
+                "fstype": "vfat",
+                "fsuse_percentage": "17%",
+                "fsver": "FAT32",
+                "log_sec": 512,
+                "mountpoint": "/boot",
+                "mountpoints": [
+                    "/boot"
+                ],
+                "name": "mmcblk1p1",
+                "partn": 1,
+                "parttype": "c12a7328-f81f-11d2-ba4b-00a0c93ec93b",
+                "partuuid": "28d5283e-120b-49c4-bfb7-4f8301ac8430",
+                "path": "/dev/mmcblk1p1",
+                "pkname": "mmcblk1",
+                "pttype": "gpt",
+                "ptuuid": "1e8b04f5-4bbc-4ff3-a405-9f92a608a53c",
+                "rota": false,
+                "size": "511 MiB",
+                "tran": "mmc",
+                "type": "part",
+                "uuid": "1B9E-F4F8"
+            },
+            {
+                "children": [],
+                "fsavail": 6331797504,
+                "fsroots": [
+                    "."
+                ],
+                "fstype": "ext4",
+                "fsuse_percentage": "74%",
+                "fsver": "1.0",
+                "log_sec": 512,
+                "mountpoint": "/",
+                "mountpoints": [
+                    "/"
+                ],
+                "name": "mmcblk1p2",
+                "partn": 2,
+                "parttype": "0fc63daf-8483-4772-8e79-3d69d8477de4",
+                "partuuid": "6510281b-b2ea-4908-ba9a-a01843c420b4",
+                "path": "/dev/mmcblk1p2",
+                "pkname": "mmcblk1",
+                "pttype": "gpt",
+                "ptuuid": "1e8b04f5-4bbc-4ff3-a405-9f92a608a53c",
+                "rota": false,
+                "size": "29306 MiB",
+                "tran": "mmc",
+                "type": "part",
+                "uuid": "5e086312-2d91-4af0-8b71-42a2c67a3f4c"
+            }
+        ],
+        "fsavail": null,
+        "fsroots": [],
+        "fstype": null,
+        "fsuse_percentage": null,
+        "fsver": null,
+        "log_sec": 512,
+        "mountpoint": null,
+        "mountpoints": [],
+        "name": "mmcblk1",
+        "partn": null,
+        "parttype": null,
+        "partuuid": null,
+        "path": "/dev/mmcblk1",
+        "pkname": null,
+        "pttype": "gpt",
+        "ptuuid": "1e8b04f5-4bbc-4ff3-a405-9f92a608a53c",
+        "rota": false,
+        "size": "29820 MiB",
+        "tran": "mmc",
+        "type": "disk",
+        "uuid": null
+    },
+    {
+        "children": [],
+        "fsavail": null,
+        "fsroots": [],
+        "fstype": null,
+        "fsuse_percentage": null,
+        "fsver": null,
+        "log_sec": 512,
+        "mountpoint": null,
+        "mountpoints": [],
+        "name": "mmcblk1boot0",
+        "partn": null,
+        "parttype": null,
+        "partuuid": null,
+        "path": "/dev/mmcblk1boot0",
+        "pkname": null,
+        "pttype": "gpt",
+        "ptuuid": "1e8b04f5-4bbc-4ff3-a405-9f92a608a53c",
+        "rota": false,
+        "size": "4 MiB",
+        "tran": "mmc",
+        "type": "disk",
+        "uuid": null
+    },
+    {
+        "children": [],
+        "fsavail": null,
+        "fsroots": [],
+        "fstype": null,
+        "fsuse_percentage": null,
+        "fsver": null,
+        "log_sec": 512,
+        "mountpoint": null,
+        "mountpoints": [],
+        "name": "mmcblk1boot1",
+        "partn": null,
+        "parttype": null,
+        "partuuid": null,
+        "path": "/dev/mmcblk1boot1",
+        "pkname": null,
+        "pttype": "gpt",
+        "ptuuid": "1e8b04f5-4bbc-4ff3-a405-9f92a608a53c",
+        "rota": false,
+        "size": "4 MiB",
+        "tran": "mmc",
+        "type": "disk",
+        "uuid": null
+    },
+    {
+        "children": [],
+        "fsavail": null,
+        "fsroots": [],
+        "fstype": null,
+        "fsuse_percentage": null,
+        "fsver": null,
+        "log_sec": 4096,
+        "mountpoint": "[SWAP]",
+        "mountpoints": [
+            "[SWAP]"
+        ],
+        "name": "zram0",
+        "partn": null,
+        "parttype": null,
+        "partuuid": null,
+        "path": "/dev/zram0",
+        "pkname": null,
+        "pttype": null,
+        "ptuuid": null,
+        "rota": false,
+        "size": "4096 MiB",
+        "tran": null,
+        "type": "disk",
+        "uuid": null
+    }
+]
+Not enough permission to place log file at /var/log/archinstall/install.log, creating it in /home/smoolldev/dotfiles/install.log instead
+Hardware model detected: Intel Intel; UEFI mode: True
+Processor model detected: Intel(R) Atom(TM) x5-Z8350  CPU @ 1.44GHz
+Memory statistics: 567492 available out of 1923696 total installed
+Could not detect virtual system: ['/usr/bin/systemd-detect-virt'] exited with abnormal exit code [1]: none
+
+System is not running in a VM: ['/usr/bin/systemd-detect-virt'] exited with abnormal exit code [1]: none
+
+Virtualization detected: None; is VM: False
+Graphics devices detected: dict_keys(['Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Integrated Graphics Controller (rev 36)'])
+Disk states before installing: [
+    {
+        "children": [
+            {
+                "children": [],
+                "fsavail": 445939712,
+                "fsroots": [
+                    "."
+                ],
+                "fstype": "vfat",
+                "fsuse_percentage": "17%",
+                "fsver": "FAT32",
+                "log_sec": 512,
+                "mountpoint": "/boot",
+                "mountpoints": [
+                    "/boot"
+                ],
+                "name": "mmcblk1p1",
+                "partn": 1,
+                "parttype": "c12a7328-f81f-11d2-ba4b-00a0c93ec93b",
+                "partuuid": "28d5283e-120b-49c4-bfb7-4f8301ac8430",
+                "path": "/dev/mmcblk1p1",
+                "pkname": "mmcblk1",
+                "pttype": "gpt",
+                "ptuuid": "1e8b04f5-4bbc-4ff3-a405-9f92a608a53c",
+                "rota": false,
+                "size": "511 MiB",
+                "tran": "mmc",
+                "type": "part",
+                "uuid": "1B9E-F4F8"
+            },
+            {
+                "children": [],
+                "fsavail": 6342799360,
+                "fsroots": [
+                    "."
+                ],
+                "fstype": "ext4",
+                "fsuse_percentage": "74%",
+                "fsver": "1.0",
+                "log_sec": 512,
+                "mountpoint": "/",
+                "mountpoints": [
+                    "/"
+                ],
+                "name": "mmcblk1p2",
+                "partn": 2,
+                "parttype": "0fc63daf-8483-4772-8e79-3d69d8477de4",
+                "partuuid": "6510281b-b2ea-4908-ba9a-a01843c420b4",
+                "path": "/dev/mmcblk1p2",
+                "pkname": "mmcblk1",
+                "pttype": "gpt",
+                "ptuuid": "1e8b04f5-4bbc-4ff3-a405-9f92a608a53c",
+                "rota": false,
+                "size": "29306 MiB",
+                "tran": "mmc",
+                "type": "part",
+                "uuid": "5e086312-2d91-4af0-8b71-42a2c67a3f4c"
+            }
+        ],
+        "fsavail": null,
+        "fsroots": [],
+        "fstype": null,
+        "fsuse_percentage": null,
+        "fsver": null,
+        "log_sec": 512,
+        "mountpoint": null,
+        "mountpoints": [],
+        "name": "mmcblk1",
+        "partn": null,
+        "parttype": null,
+        "partuuid": null,
+        "path": "/dev/mmcblk1",
+        "pkname": null,
+        "pttype": "gpt",
+        "ptuuid": "1e8b04f5-4bbc-4ff3-a405-9f92a608a53c",
+        "rota": false,
+        "size": "29820 MiB",
+        "tran": "mmc",
+        "type": "disk",
+        "uuid": null
+    },
+    {
+        "children": [],
+        "fsavail": null,
+        "fsroots": [],
+        "fstype": null,
+        "fsuse_percentage": null,
+        "fsver": null,
+        "log_sec": 512,
+        "mountpoint": null,
+        "mountpoints": [],
+        "name": "mmcblk1boot0",
+        "partn": null,
+        "parttype": null,
+        "partuuid": null,
+        "path": "/dev/mmcblk1boot0",
+        "pkname": null,
+        "pttype": "gpt",
+        "ptuuid": "1e8b04f5-4bbc-4ff3-a405-9f92a608a53c",
+        "rota": false,
+        "size": "4 MiB",
+        "tran": "mmc",
+        "type": "disk",
+        "uuid": null
+    },
+    {
+        "children": [],
+        "fsavail": null,
+        "fsroots": [],
+        "fstype": null,
+        "fsuse_percentage": null,
+        "fsver": null,
+        "log_sec": 512,
+        "mountpoint": null,
+        "mountpoints": [],
+        "name": "mmcblk1boot1",
+        "partn": null,
+        "parttype": null,
+        "partuuid": null,
+        "path": "/dev/mmcblk1boot1",
+        "pkname": null,
+        "pttype": "gpt",
+        "ptuuid": "1e8b04f5-4bbc-4ff3-a405-9f92a608a53c",
+        "rota": false,
+        "size": "4 MiB",
+        "tran": "mmc",
+        "type": "disk",
+        "uuid": null
+    },
+    {
+        "children": [],
+        "fsavail": null,
+        "fsroots": [],
+        "fstype": null,
+        "fsuse_percentage": null,
+        "fsver": null,
+        "log_sec": 4096,
+        "mountpoint": "[SWAP]",
+        "mountpoints": [
+            "[SWAP]"
+        ],
+        "name": "zram0",
+        "partn": null,
+        "parttype": null,
+        "partuuid": null,
+        "path": "/dev/zram0",
+        "pkname": null,
+        "pttype": null,
+        "ptuuid": null,
+        "rota": false,
+        "size": "4096 MiB",
+        "tran": null,
+        "type": "disk",
+        "uuid": null
+    }
+]

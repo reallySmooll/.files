@@ -1,10 +1,18 @@
+local ibl   = require('ibl')
+local hooks = require('ibl.hooks')
+
 vim.opt.list = true
 vim.opt.listchars:append 'space:⋅'
 vim.opt.listchars:append 'eol:↴'
 
-require('indent_blankline').setup {
-    show_end_of_line = true,
-    space_char_blankline = ' ',
-    show_current_context = true,
-    show_current_context_start = true
+local scope_highlight = {
+    "White"
+}
+
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function ()
+    vim.api.nvim_set_hl(0, "White", { fg = "#FFFFFF" })
+end)
+
+ibl.setup {
+    scope = { highlight = scope_highlight }
 }

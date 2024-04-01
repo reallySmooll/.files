@@ -40,7 +40,6 @@ packer.startup(function()
 	use('mg979/vim-visual-multi')						-- Multiple cursors
 	use('williamboman/mason.nvim')						-- NeoVim LSP server installer
 	use('williamboman/mason-lspconfig.nvim')			-- 3rd party plugin for mason.nvim
-	use('p00f/clangd_extensions.nvim')					-- Extensions for clangd lsp
 	use('hrsh7th/cmp-nvim-lsp')							-- Autocompletion sources
 	use('hrsh7th/cmp-buffer')							--
 	use('hrsh7th/cmp-cmdline')							--
@@ -53,6 +52,7 @@ packer.startup(function()
 	use('hrsh7th/vim-vsnip')							--
 	use('onsails/lspkind.nvim')							--
 	use('nvim-tree/nvim-tree.lua') 						-- File explorer
+	use('preservim/vimux') 								-- Terminal in vim
 
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }) 							  -- Syntax highlighting
 	use({ 'folke/trouble.nvim', requires = 'nvim-web-devicons' })							  -- Errors
@@ -60,12 +60,18 @@ packer.startup(function()
 	use({ 'tzachar/fuzzy.nvim', requires = 'nvim-telescope/telescope-fzf-native.nvim' })	  -- Fuzzy finder for cmp-
 	use({ 'tzachar/cmp-fuzzy-path', requires = { 'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim' }}) -- Source for file autocompletion in cmd mode
 	use({ 'catppuccin/nvim', as = 'catppuccin' }) 											  -- Theme
+	use({ 'nvim-telescope/telescope.nvim', tag = '0.1.6',
+		  requires = { { 'nvim-lua/plenary.nvim' } }
+	   })
 
 	use({ 'windwp/nvim-autopairs',
 		config = function() 
 			require('nvim-autopairs').setup {}
 	end }) 																					  -- Look at the name lol
-	use({ 'willothy/nvim-cokeline', requires = 'nvim-web-devicons',
+	use({ 'willothy/nvim-cokeline', requires = {
+			'nvim-lua/plenary.nvim',
+			'kyazdani42/nvim-web-devicons'
+		},
 		config = function()
 			require('cokeline').setup()
 	end }) 																				      -- Buffer line
@@ -73,6 +79,13 @@ packer.startup(function()
 		config = function ()
 			require('todo-comments').setup {}
 	end })			  											  						      -- Look at the name lol
+	use({ 'numToStr/Comment.nvim',
+		config = function ()
+			require('Comment').setup()
+	end })
+	--use({ 'akinsho/toggleterm.nvim', tag = '*', config = function ()
+	--	require('toggleterm').setup()
+	--end })
 
 	if packer_bootstrap then
 		require('packer').sync()
