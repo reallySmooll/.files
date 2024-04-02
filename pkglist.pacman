@@ -5,6 +5,7 @@ bleachbit
 blueman
 bluez-utils
 brightnessctl
+caja
 clang
 clipnotify
 cmake
@@ -28,6 +29,7 @@ grub-customizer
 gutenprint
 htop
 ibus
+imlib2
 inotify-tools
 intel-ucode
 irqbalance
@@ -40,6 +42,7 @@ mpv
 neofetch
 neovim
 network-manager-applet
+nitrogen
 noto-fonts-emoji
 pacman-contrib
 pacutils

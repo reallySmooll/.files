@@ -153,7 +153,7 @@ install_packer()
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
     echo Installing neovim plugins...
-    nvim --headless +PackerSync +qa
+    nvim +PackerSync
 
     echo Compiling telescope-fzf-native.nvim
     cd ~/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim/
@@ -186,7 +186,7 @@ install_dwmblocks()
 
     echo Installing dwmblocks...
 
-    cd ~/dotfiles/suckless/dwmblocks_async
+    cd ~/dotfiles/suckless/dwmblocks-async
     sudo make clean install
 
     echo
@@ -194,7 +194,9 @@ install_dwmblocks()
 
     cd modules
     ./install.sh
-    cd ../../..
+    cd ../../../
+
+    sleep 2
 }
 
 copy_configs()
@@ -216,7 +218,7 @@ copy_configs()
     echo Successfully installed GTK configs!
     echo Installing rofi config...
 
-    cp ./.config/rofi ~/.config/
+    cp -r ./.config/rofi ~/.config/
 
     echo
     echo Successfully installed rofi config!
@@ -228,7 +230,7 @@ copy_configs()
     echo
     echo Successfully installed SSH config!
 
-    sleep 2
+    sleep 5
 }
 
 copy_themes_and_icons()

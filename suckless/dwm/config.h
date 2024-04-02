@@ -61,14 +61,14 @@ static const char *const autostart[] = {
 	"systemctl", "--user", "import-environment", "DISPLAY", NULL,
 	"parcellite", NULL,
 	"redshift-gtk", "-l", "54.00696:15.98751", "-t", "6500:3500", NULL,
-	"xbindkeys", "-f", ".xbindkeysrc", NULL,
+	//"xbindkeys", "-f", ".xbindkeysrc", NULL,
 	"nm-applet", NULL,
 	"blueman-applet", NULL,
 	"volctl", NULL,
 	"polychromatic-tray-applet", NULL,
 	"flameshot", NULL,
-	"python3", "/home/smoolldev/SmoollDev/Development/Python/OpenRazer/multicolor.py", NULL,
-	NULL /* terminate */
+	//"python3", "/home/smoolldev/SmoollDev/Development/Python/OpenRazer/multicolor.py", NULL,
+	 NULL /* terminate */
 };
 
 /* tagging */
