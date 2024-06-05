@@ -67,6 +67,7 @@ static const char *const autostart[] = {
 	"volctl", NULL,
 	"polychromatic-tray-applet", NULL,
 	"flameshot", NULL,
+	"kitty", NULL,
 	//"python3", "/home/smoolldev/SmoollDev/Development/Python/OpenRazer/multicolor.py", NULL,
 	 NULL /* terminate */
 };
@@ -123,14 +124,16 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] 	   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", foreground, "-nf", background, "-sb", border, "-sf", black, NULL };
-static const char *termcmd[]  	   = { "kitty", NULL };
-//static const char *clipmenu[] 	   = { "clipmenu", NULL };
-static const char *caja[] 	  	   = { "caja", NULL };
-static const char *rofi[] 	       = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/config.rasi", NULL };
-static const char *powermenu[] 	   = { "powermenu.sh", NULL };
-static const char *picom[] 		   = { "picom" };
-static const char *kill_picom[]    = { "killall", "picom" };
+static const char *dmenucmd[] 	= { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", foreground, "-nf", background, "-sb", border, "-sf", black, NULL };
+static const char *termcmd[]  	= { "kitty", NULL };
+//static const char *clipmenu[]     = { "clipmenu", NULL };
+static const char *caja[] 	  	= { "caja", NULL };
+static const char *rofi[] 	    = { "rofi", "-show", "drun", "-theme", "~/.config/rofi/config.rasi", NULL };
+static const char *powermenu[]  = { "powermenu.sh", NULL };
+static const char *picom[] 		= { "picom" };
+static const char *kill_picom[] = { "killall", "picom" };
+static const char *bsethalf[] 	= { "brightnessctl", "s", "50%" };
+static const char *bsetone[]	= { "brightnessctl", "s", "1" };
 
 // Keys
 static const Key keys[] = {
@@ -138,6 +141,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = rofi } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask, 			XK_b, 	   spawn, 	   	   {.v = bsetone } },
+	{ MODKEY|ShiftMask|ControlMask, XK_b, 	   spawn, 		   {.v = bsethalf } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
