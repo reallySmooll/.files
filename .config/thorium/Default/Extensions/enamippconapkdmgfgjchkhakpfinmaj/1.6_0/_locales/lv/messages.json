@@ -1,0 +1,30 @@
+{
+   "400": {
+      "message": "Serveris ziņo, ka šis pieprasījums ir nederīgs"
+   },
+   "409": {
+      "message": "Šis jau ir ticis aizsūtīts iepriekš"
+   },
+   "Description": {
+      "description": "Description of the extension.",
+      "message": "Izlaidiet sponsorus, abonēšanas lūgumus un vairāk, skatoties YouTube video. Ziņojiet par sponsoriem video, kurus jūs skatāties, lai ietaupītu citu laiku."
+   },
+   "Segment": {
+      "message": "segments"
+   },
+   "channelWhitelisted": {
+      "message": "Kanāls iekļauts baltajā sarakstā!"
+   },
+   "deArrowDescription": {
+      "description": "Description of the Clickbait extension.",
+      "message": "Crowdsourcing titles and thumbnails to be descriptive and not sensational"
+   },
+   "deArrowFullName": {
+      "description": "Name of the Clickbait extension. The name refers to removing arrows from thumbnails",
+      "message": "DeArrow - Better Titles and Thumbnails on YouTube"
+   },
+   "fullName": {
+      "description": "Name of the extension.",
+      "message": "SponsorBlock priekš YouTube - Izlaid sponsorus"
+   }
+}

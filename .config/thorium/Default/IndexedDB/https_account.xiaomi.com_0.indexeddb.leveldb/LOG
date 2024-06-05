@@ -1,0 +1,10 @@
+2024/05/16-15:52:29.527 16e1 Creating DB /home/smoolldev/.config/thorium/Default/IndexedDB/https_account.xiaomi.com_0.indexeddb.leveldb since it was missing.
+2024/05/16-15:52:29.548 16e1 Delete type=3 #1
+2024/05/16-15:52:30.020 16ed Level-0 table #5: started
+2024/05/16-15:52:30.034 16ed Level-0 table #5: 769 bytes OK
+2024/05/16-15:52:30.040 16ed Delete type=0 #3
+2024/05/16-15:52:30.044 16e5 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/05/16-15:52:39.771 16e5 Level-0 table #7: started
+2024/05/16-15:52:39.777 16e5 Level-0 table #7: 3642 bytes OK
+2024/05/16-15:52:39.784 16e5 Delete type=0 #4
+2024/05/16-15:52:39.788 16e1 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -1,0 +1,6 @@
+2024/05/23-21:36:44.549 511 Creating DB /home/smoolldev/.config/thorium/Default/WebStorage/75/IndexedDB/indexeddb.leveldb since it was missing.
+2024/05/23-21:36:44.595 511 Delete type=3 #1
+2024/05/23-22:07:07.748 512 Level-0 table #5: started
+2024/05/23-22:07:07.782 512 Level-0 table #5: 98281 bytes OK
+2024/05/23-22:07:07.789 512 Delete type=0 #3
+2024/05/23-22:07:07.792 512 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

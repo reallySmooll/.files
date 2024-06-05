@@ -1,0 +1,425 @@
+{
+   "appearance": {
+      "message": "外觀："
+   },
+   "automatic": {
+      "message": "自動跟隨系統"
+   },
+   "backup": {
+      "message": "數據備份"
+   },
+   "backupDesc": {
+      "message": "不同設備登陸同一個Google賬號可自動同步（擴展別名除外）"
+   },
+   "cancel": {
+      "message": "取消"
+   },
+   "changeViewBtn": {
+      "message": "切換"
+   },
+   "clickMenu": {
+      "message": "點擊彈出"
+   },
+   "closeAllBtn": {
+      "message": "重置"
+   },
+   "commonGroup": {
+      "message": "普通分组"
+   },
+   "dark": {
+      "message": "深色"
+   },
+   "defaultGroupName": {
+      "message": "默認分組"
+   },
+   "disableOnly": {
+      "message": "只有匹配才關閉"
+   },
+   "disableWhen": {
+      "message": "匹配後關閉"
+   },
+   "emptyShowListCon": {
+      "message": "沒有啟用的擴展"
+   },
+   "enableOnly": {
+      "message": "只有匹配才開啟"
+   },
+   "enableWhen": {
+      "message": "匹配後開啟"
+   },
+   "export_options": {
+      "message": "導出"
+   },
+   "extDesr": {
+      "message": "一鍵管理所有擴充功能，快速開啟/禁用、批量閃電管理，智能排序，右鍵卸載、鎖定、選項配置，角標提醒，大小佈局隨心配。快捷、簡單、安全。"
+   },
+   "extName": {
+      "message": "擴充功能/擴展管理器（Extension Manager）"
+   },
+   "extNameShort": {
+      "message": "擴充功能/擴展管理器"
+   },
+   "failed_to_import": {
+      "message": "導入失敗"
+   },
+   "feedbackMenu": {
+      "message": "回饋"
+   },
+   "feedback_answer1": {
+      "message": "點擊擴展圖標即可啟用和關閉擴展。"
+   },
+   "feedback_answer2": {
+      "message": "我們鼓勵用戶對擴展進行分組，“鎖定”意味著該擴展和該組綁定在一起。當你需要臨時啟用某些擴展的時候，你可以通過點擊擴展圖標啟用擴展，用完後，點擊恢復按鈕還原擴展組狀態。"
+   },
+   "feedback_answer3": {
+      "message": "快速關閉臨時使用擴展（未鎖定）"
+   },
+   "feedback_desc": {
+      "message": "有任何改善建議、想問問題、注意到配置缺少選項，或是發現bug嗎？為了改善這個擴充功能的使用體驗，您可能會有的任何所有回饋我都會很感謝。"
+   },
+   "feedback_error_amount": {
+      "message": "上傳屏幕截圖數量超過限制"
+   },
+   "feedback_error_filesize": {
+      "message": "檔案大小太大了(> 1 MB)"
+   },
+   "feedback_fail": {
+      "message": "無法發送您的訊息。請再次嘗試看看。"
+   },
+   "feedback_headline": {
+      "message": "這可能會引起你的注意"
+   },
+   "feedback_process": {
+      "message": "正在發送, 請稍後"
+   },
+   "feedback_screenshot": {
+      "message": "附加螢幕擷圖"
+   },
+   "feedback_send": {
+      "message": "寄出回饋"
+   },
+   "feedback_success": {
+      "message": "感謝您的回饋"
+   },
+   "feedback_suggestion1": {
+      "message": "如何快速啟用和關閉擴展？"
+   },
+   "feedback_suggestion2": {
+      "message": "什麼是鎖定？"
+   },
+   "feedback_suggestion3": {
+      "message": "什麼是重置？"
+   },
+   "fixGroup": {
+      "message": "固定分组"
+   },
+   "fixGroupDesc": {
+      "message": "固定分組下的擴展將會一直保持開啟狀態，您可以將常用擴展加入分組。"
+   },
+   "fixGroupOperat": {
+      "message": "通過點亮擴展圖標進行分組鎖定"
+   },
+   "hoverMenu": {
+      "message": "懸浮彈出"
+   },
+   "howToSet": {
+      "message": "如何設置？"
+   },
+   "iconSize": {
+      "message": "圖標大小："
+   },
+   "iconSizeMenu": {
+      "message": "圖標大小"
+   },
+   "import_options": {
+      "message": "導入"
+   },
+   "light": {
+      "message": "淺色"
+   },
+   "menuType": {
+      "message": "擴展選項顯示方式："
+   },
+   "nameExtDesc": {
+      "message": "給每個擴展起一個你喜歡的名字"
+   },
+   "nameExtOperat": {
+      "message": "點擊修改圖標，給擴展起名，在基本設置裡打開這個功能才能生效，由於瀏覽器的限制，別名暫時不能自動同步。"
+   },
+   "nameMenu": {
+      "message": "名稱設置"
+   },
+   "newGroupName": {
+      "message": "新分组"
+   },
+   "optionGroupDelete": {
+      "message": "確定要刪除該分組嗎？"
+   },
+   "optionGroupDeleteAtLeaseOne": {
+      "message": "至少保留一個分組！"
+   },
+   "optionGroupDesc": {
+      "message": "通過分組閃電管理擴展狀態，適配不同場景，比如家、公司"
+   },
+   "optionGroupModifyName": {
+      "message": "請輸入分組名稱，最好請保持在2~6個漢字"
+   },
+   "optionGroupOperat": {
+      "message": "在當前分組下，通過點擊擴展圖標點亮後進行分組鎖定"
+   },
+   "optionGroupTitle": {
+      "message": "分組管理"
+   },
+   "optionGroupTitleMenu": {
+      "message": "分組管理"
+   },
+   "optionName": {
+      "message": "選項配置"
+   },
+   "optionNameModifyName": {
+      "message": "輸入擴展別名，建議中文保留4個字符，其它語言保留8個字符"
+   },
+   "optionRuleDelete": {
+      "message": "確定要刪除該規則嗎？"
+   },
+   "otherDesc": {
+      "message": "同時，也可以登陸 \u003Ca>Chrome 線上應用程式商店\u003C/a> 給予好評 或 提供支持性建議"
+   },
+   "otherDonate": {
+      "message": "如果您對它還算滿意，可以給予我一點讚賞，激勵我持續免費的完善它 :-)"
+   },
+   "otherEdgeDesc": {
+      "message": "同時，也可以登陸 \u003Ca>Edge 線上應用程式商店\u003C/a> 給予好評 或 提供支持性建議"
+   },
+   "otherName": {
+      "message": "支持："
+   },
+   "rankBtn": {
+      "message": "重置排序"
+   },
+   "rankName": {
+      "message": "擴展排序："
+   },
+   "rankNameMenu": {
+      "message": "擴展排序"
+   },
+   "resetTipCancelText": {
+      "message": "我要分組"
+   },
+   "resetTipContent": {
+      "message": "重置的含義是將沒有鎖定的擴展從當前分組中移除，恢復當前分組的狀態，建議您先進行\u003Cspan style='color:#00aced'>分組\u003C/span>或者先\u003Cspan style='color:#00aced'>鎖定\u003C/span>擴展。"
+   },
+   "resetTipDangerText": {
+      "message": "繼續重置"
+   },
+   "resetTipTitle": {
+      "message": "如果這是您第一次使用重置功能"
+   },
+   "rightAppLaunch": {
+      "message": "啟動"
+   },
+   "rightHomepage": {
+      "message": "主頁"
+   },
+   "rightLock_lock": {
+      "message": "鎖定"
+   },
+   "rightLock_unlock": {
+      "message": "解鎖"
+   },
+   "rightMoreDesc": {
+      "message": "在擴展圖標上右鍵可操作更多功能"
+   },
+   "rightMoreName": {
+      "message": "右鍵菜單："
+   },
+   "rightOption": {
+      "message": "選項"
+   },
+   "rightUninstall": {
+      "message": "刪除"
+   },
+   "ruleAdd": {
+      "message": "新增規則"
+   },
+   "ruleExtAction": {
+      "message": "動作"
+   },
+   "ruleExtDesc": {
+      "message": "根據不同網站管理相關的擴展"
+   },
+   "ruleExtEmpty": {
+      "message": "未選定擴展"
+   },
+   "ruleExtList": {
+      "message": "規則列表"
+   },
+   "ruleExtThExt": {
+      "message": "擴展"
+   },
+   "ruleExtThNumber": {
+      "message": "序號"
+   },
+   "ruleExtThOperate": {
+      "message": "操作"
+   },
+   "ruleExtThUrl": {
+      "message": "匹配"
+   },
+   "ruleExtWhat": {
+      "message": "什麼叫做規則？"
+   },
+   "ruleMaxExtNum": {
+      "message": "超過可配置的最大擴展數量:"
+   },
+   "ruleMaxNum": {
+      "message": "超過可配置的最大規則數量:"
+   },
+   "ruleMenu": {
+      "message": "規則"
+   },
+   "ruleSave": {
+      "message": "保存規則"
+   },
+   "ruleTipContent1": {
+      "message": "\u003Cp style='color:#509EE3;font-weight: bold;'>場景：進入亞馬遜購物網站，打開擴展Honey購物插件\u003C/p>\u003Cp style='color:#509EE3;font-weight: bold; '>規則：匹配網址[\u003Cspan style='color:red;'>*amazon.com*\u003C/span>]，擴展[Honey]\u003C/p>"
+   },
+   "ruleTipContent2": {
+      "message": "\u003Cp style='color:#509EE3;font-weight: bold;'>什麼是通配符\u003C/p>\u003Cspan>\u003Cspan style='font-weight: bold;'>星號\u003C/span> \u003Cspan style ='color:red;font-weight: bold;'>*\u003C/span> 匹配零個或者多個字符。 \u003C/p>\u003Cp>\u003Cspan style='font-weight: bold;'>問號\u003C/span> \u003Cspan style='color:red;font-weight: bold;'>?\u003C/span> 匹配任意一個字符。 \u003C/p>\u003C/br>\u003Cp>請注意以\u003Cspan style='color:red;font-weight: bold;'>*.\u003C/span> 開頭的規則有特別處理，會同時匹配子域名和自身。 \u003C/p>\u003Cp>例如: \u003Cspan style='color:red;font-weight: bold;'>*.example.com\u003C/span> 能匹配www.example.com ，\u003Cspan style='font- weight: bold;'>而且也能匹配example.com\u003C/span> 。 \u003C/p>\u003Cp>如果\u003Cspan style='font-weight: bold;'>只需要匹配子域名\u003C/span>，請使用\u003Cspan style='font-weight: bold;'>兩個\u003C/ span>星號開頭，如\u003Cspan style='color:red;font-weight: bold;'>**.example.com\u003C/span>。 \u003C/p>\u003C/br>\u003Cspan style='color:#509EE3;font-weight: bold;'>舉例\u003C/span>\u003Cp>模式:\u003Cspan style='color:red;font-weight: bold ;'>*.example.com\u003C/span> (或\u003Cspan style='color:red;font-weight: bold;'>.example.com\u003C/span>)\u003C/p>\u003Cp>匹配:a .example.com, abexample.com, example.com\u003C/p>\u003Cp>不匹配:example.test, example.com.test, anotherexample.com\u003C/p>\u003C/br>\u003Cp style='color:#509EE3;font-weight: bold;'>多域名匹配\u003C/p>\u003Cp>匹配amazon以及taobao商品頁面：\u003Cspan style='color:red;font-weight: bold;'>*amazon.com*|*item.taobao.com*\u003C/span>\u003C/p>\u003C/br>\u003Cp style='color:#509EE3;font-weight: bold;'>常用配置\u003C/p>\u003Cp>匹配amazon所有頁面：\u003Cspan style='color:red;font-weight: bold;'>*amazon.com*\u003C /span>\u003C/p>\u003Cp>匹配taobao商品頁面：\u003Cspan style='color:red;font-weight: bold;'>*item.taobao.com*\u003C/span>\u003C/p>"
+   },
+   "ruleTipTitle1": {
+      "message": "場景舉例"
+   },
+   "ruleTipTitle2": {
+      "message": "地址設置方法"
+   },
+   "ruleUrlEmpty": {
+      "message": "地址不能為空"
+   },
+   "ruleWildMulti": {
+      "message": "支持多域名匹配，用 | 隔開"
+   },
+   "ruleWildcard": {
+      "message": "通配符匹配地址"
+   },
+   "searcherEmpty": {
+      "message": "沒有找到相關擴展或應用"
+   },
+   "searcherPlaceholder": {
+      "message": "搜索擴展"
+   },
+   "showApp": {
+      "message": "顯示應用"
+   },
+   "showBadgeDesc": {
+      "message": "通過角標顯示臨時啟用的擴展數量(已經啟用，但未被鎖定）"
+   },
+   "showBadgeName": {
+      "message": "顯示角標"
+   },
+   "showBadgeNameMenu": {
+      "message": "顯示角標"
+   },
+   "showCols": {
+      "message": "顯示列數："
+   },
+   "showColsMenu": {
+      "message": "顯示列數"
+   },
+   "showExtName": {
+      "message": "顯示名称："
+   },
+   "showExtNameDesc": {
+      "message": "鼠標滑過擴充功能圖標時顯示其名稱"
+   },
+   "showFastDesc": {
+      "message": "彈出面版中的快捷設定圖標"
+   },
+   "showFastName": {
+      "message": "顯示快捷圖標"
+   },
+   "showGridExtDesc": {
+      "message": "在左側菜單欄-名稱設置，設置擴展別名，否則顯示默認別名"
+   },
+   "showGridExtName": {
+      "message": "網格模式下顯示擴展名稱"
+   },
+   "showGridExtTip": {
+      "message": "開啟後，[根據擴展名稱排序]規則將會改為[根據擴展別名排序]"
+   },
+   "showGridMod": {
+      "message": "網格視圖"
+   },
+   "showListMod": {
+      "message": "列表視圖"
+   },
+   "showMod": {
+      "message": "顯示模式："
+   },
+   "showModMenu": {
+      "message": "顯示模式"
+   },
+   "showThemeMenu": {
+      "message": "顯示外觀"
+   },
+   "sizeBig": {
+      "message": "放大"
+   },
+   "sizeNormal": {
+      "message": "標準"
+   },
+   "sizeSmall": {
+      "message": "縮小"
+   },
+   "sortByName": {
+      "message": "根據擴展名稱排序"
+   },
+   "sortByRank": {
+      "message": "根據開啟頻率排序"
+   },
+   "speedManageDesc": {
+      "message": "一鍵禁用全部擴展（已被鎖定的擴展+主題插件除外）"
+   },
+   "speedManageLock": {
+      "message": "點擊下面的圖標“鎖定”或“解鎖”擴展"
+   },
+   "speedManageName": {
+      "message": "閃電管理："
+   },
+   "success_to_import": {
+      "message": "導入成功，請重新加載頁面讀取最新配置！"
+   },
+   "supportMenu": {
+      "message": "支持"
+   },
+   "tipConfirmText": {
+      "message": "我知道了"
+   },
+   "tipResetRank": {
+      "message": "已重置排序！"
+   },
+   "tipSetSuc": {
+      "message": "設置成功！"
+   },
+   "tipsCon": {
+      "message": "去逛一逛"
+   },
+   "tipsEdgeUrl": {
+      "message": "Edge 線上應用程式商店"
+   },
+   "tipsTitle": {
+      "message": "未安裝任何擴展 :-)"
+   },
+   "tipsUrl": {
+      "message": "Chrome 線上應用程式商店"
+   },
+   "updateTipContent": {
+      "message": "\u003Cp style='font-size:15px;'>你可以選擇擴展選項的顯示方式\u003C/p>\u003Cp>通过\u003Cspan style='color:#00aced'>設定-擴展選項顯示方式\u003C/span>選擇懸浮彈出或者點擊彈出\u003C/p>"
+   },
+   "updateTipTitle": {
+      "message": "更新提示"
+   },
+   "viewSetMenu": {
+      "message": "基本設置"
+   }
+}

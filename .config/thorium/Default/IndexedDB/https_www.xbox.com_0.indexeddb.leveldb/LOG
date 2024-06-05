@@ -1,0 +1,33 @@
+2024/04/28-16:07:11.734 511 Recovering log #75
+2024/04/28-16:07:11.739 511 Level-0 table #78: started
+2024/04/28-16:07:11.748 511 Level-0 table #78: 18262 bytes OK
+2024/04/28-16:07:11.764 511 Delete type=2 #74
+2024/04/28-16:07:11.764 511 Delete type=0 #75
+2024/04/28-16:07:11.765 511 Delete type=2 #72
+2024/04/28-16:07:11.765 511 Delete type=3 #73
+2024/04/28-16:07:12.666 512 Compacting 1@0 + 1@1 files
+2024/04/28-16:07:12.812 512 Generated table #80@0: 19803 keys, 736767 bytes
+2024/04/28-16:07:12.813 512 Compacted 1@0 + 1@1 files => 736767 bytes
+2024/04/28-16:07:12.827 512 compacted to: files[ 0 1 0 0 0 0 0 ]
+2024/04/28-17:17:58.216 512 Level-0 table #82: started
+2024/04/28-17:17:58.353 512 Level-0 table #82: 981919 bytes OK
+2024/04/28-17:17:58.357 512 Delete type=2 #78
+2024/04/28-17:17:58.358 512 Delete type=0 #79
+2024/04/28-17:17:58.358 512 Delete type=2 #76
+2024/04/28-17:18:58.803 51d Compacting 1@0 + 1@1 files
+2024/04/28-17:18:59.000 51d Generated table #83@0: 29631 keys, 1171590 bytes
+2024/04/28-17:18:59.001 51d Compacted 1@0 + 1@1 files => 1171590 bytes
+2024/04/28-17:18:59.006 51d compacted to: files[ 0 1 0 0 0 0 0 ]
+2024/04/28-17:18:59.007 51d Delete type=2 #80
+2024/04/28-17:18:59.007 51d Delete type=2 #82
+2024/04/28-17:43:17.836 511 Level-0 table #85: started
+2024/04/28-17:43:17.885 511 Level-0 table #85: 129298 bytes OK
+2024/04/28-17:43:17.888 511 Delete type=0 #81
+2024/04/28-17:43:17.890 511 Manual compaction at level-0 from (begin) .. (end); will stop at '\x00\x02\x01\x1f\x02\x00\xc0\xc6\x7fP\xf2xB\x00\x03\x00\x00\x00\x00\x00d\xb6@' @ 287255 : 1
+2024/04/28-17:43:17.890 511 Compacting 1@0 + 1@1 files
+2024/04/28-17:43:18.074 511 Generated table #86@0: 31098 keys, 1219109 bytes
+2024/04/28-17:43:18.075 511 Compacted 1@0 + 1@1 files => 1219109 bytes
+2024/04/28-17:43:18.079 511 compacted to: files[ 0 1 0 0 0 0 0 ]
+2024/04/28-17:43:18.083 511 Delete type=2 #85
+2024/04/28-17:43:18.084 511 Delete type=2 #83
+2024/04/28-17:43:18.090 511 Manual compaction at level-0 from '\x00\x02\x01\x1f\x02\x00\xc0\xc6\x7fP\xf2xB\x00\x03\x00\x00\x00\x00\x00d\xb6@' @ 287255 : 1 .. (end); will stop at (end)

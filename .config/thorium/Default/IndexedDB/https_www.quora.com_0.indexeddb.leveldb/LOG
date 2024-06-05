@@ -1,0 +1,15 @@
+2024/05/21-21:28:26.418 57a Recovering log #4
+2024/05/21-21:28:26.435 57a Delete type=0 #4
+2024/05/21-21:28:26.436 57a Delete type=3 #2
+2024/05/21-23:29:43.443 57b Level-0 table #9: started
+2024/05/21-23:29:43.447 57b Level-0 table #9: 209 bytes OK
+2024/05/21-23:29:43.462 57b Delete type=0 #7
+2024/05/21-23:29:43.465 57b Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2024/05/21-23:29:43.468 57b Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x00\x00\x00\x06' @ 227 : 1
+2024/05/21-23:29:43.468 57b Compacting 1@1 + 1@2 files
+2024/05/21-23:29:43.471 57b Generated table #10@1: 69 keys, 1211 bytes
+2024/05/21-23:29:43.472 57b Compacted 1@1 + 1@2 files => 1211 bytes
+2024/05/21-23:29:43.474 57b compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/05/21-23:29:43.475 57b Delete type=2 #9
+2024/05/21-23:29:43.475 57b Delete type=2 #5
+2024/05/21-23:29:43.477 57b Manual compaction at level-1 from '\x00\x00\x00\x00\x06' @ 227 : 1 .. (end); will stop at (end)

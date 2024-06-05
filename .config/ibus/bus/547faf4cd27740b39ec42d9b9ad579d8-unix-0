@@ -1,7 +1,0 @@
-# This file is created by ibus-daemon, please do not modify it.
-# This file allows processes on the machine to find the
-# ibus session bus with the below address.
-# If the IBUS_ADDRESS environment variable is set, it will
-# be used rather than this file.
-IBUS_ADDRESS=unix:path=/home/smoolldev/.cache/ibus/dbus-RoLAUuF6,guid=8daee4a81b80ccc05853ac0c660af3f2
-IBUS_DAEMON_PID=955

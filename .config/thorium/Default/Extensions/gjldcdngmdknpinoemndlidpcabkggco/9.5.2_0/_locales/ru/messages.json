@@ -1,0 +1,425 @@
+{
+   "appearance": {
+      "message": "внешний вид:"
+   },
+   "automatic": {
+      "message": "автоматическая следующая система"
+   },
+   "backup": {
+      "message": "резервная копия"
+   },
+   "backupDesc": {
+      "message": "автоматическая синхронизация с номером счета Google (кроме расширенных псевдонимов)"
+   },
+   "cancel": {
+      "message": "отмена"
+   },
+   "changeViewBtn": {
+      "message": "переключатель"
+   },
+   "clickMenu": {
+      "message": "щелчок"
+   },
+   "closeAllBtn": {
+      "message": "сброс"
+   },
+   "commonGroup": {
+      "message": "обычный"
+   },
+   "dark": {
+      "message": "темный цвет"
+   },
+   "defaultGroupName": {
+      "message": "дефолт"
+   },
+   "disableOnly": {
+      "message": "Закрыть только при совпадении"
+   },
+   "disableWhen": {
+      "message": "не открываться при совпадении"
+   },
+   "emptyShowListCon": {
+      "message": "Расширение не включен"
+   },
+   "enableOnly": {
+      "message": "Открывать только при совпадении"
+   },
+   "enableWhen": {
+      "message": "Открывать при совпадении"
+   },
+   "export_options": {
+      "message": "Экспорт"
+   },
+   "extDesr": {
+      "message": "Ключ для управления всеми расширениями, быстро вкл выкл, молния управление партиями, интеллектуальная сортировка, правильно выгружается, запертый, параметры конфигурации, нижний индекс напомнило макет / размера с сердцем. Быстро, просто и безопасно."
+   },
+   "extName": {
+      "message": "Extension Manager"
+   },
+   "extNameShort": {
+      "message": "Extension Manager"
+   },
+   "failed_to_import": {
+      "message": "Ошибка импорта"
+   },
+   "feedbackMenu": {
+      "message": "Обратная связь"
+   },
+   "feedback_answer1": {
+      "message": "Нажмите на расширенную икону, чтобы открыть и закрыть расширение."
+   },
+   "feedback_answer2": {
+      "message": "Мы призываем пользователей группироваться для расширения, а «блокировка» означает, что расширение связано с группой. Когда вам нужно временно открыть некоторые расширения, вы можете включить расширение, нажав на иконку расширения, а когда она заканчивается, нажмите на кнопку восстановления состояния группы."
+   },
+   "feedback_answer3": {
+      "message": "быстрое закрытие временного расширения (без блокировки) "
+   },
+   "feedback_desc": {
+      "message": "У вас есть предложения по улучшению, какие-либо вопросы, отсутствуют некоторые параметры конфигурации или нашли ошибку? Для улучшения работы расширения я буду очень рад всем отзывам, которые Вы мне оставите."
+   },
+   "feedback_error_amount": {
+      "message": "количество снимков экрана превышает ограничение"
+   },
+   "feedback_error_filesize": {
+      "message": " размер файла слишком большой (> 1 Мб) "
+   },
+   "feedback_fail": {
+      "message": "Ваше сообщение не удалось отправить. Пожалуйста, попробуйте ещё раз."
+   },
+   "feedback_headline": {
+      "message": "Это может заинтересовать вас"
+   },
+   "feedback_process": {
+      "message": "Отправка, пожалуйста подождите"
+   },
+   "feedback_screenshot": {
+      "message": "Прикрепить снимок экрана"
+   },
+   "feedback_send": {
+      "message": "Отправить отзыв"
+   },
+   "feedback_success": {
+      "message": "Благодарим вас за отзыв"
+   },
+   "feedback_suggestion1": {
+      "message": "как быстро включить и закрыть расширение?"
+   },
+   "feedback_suggestion2": {
+      "message": "Что такое блокировка?"
+   },
+   "feedback_suggestion3": {
+      "message": "Что такое сброс?"
+   },
+   "fixGroup": {
+      "message": "закрепление"
+   },
+   "fixGroupDesc": {
+      "message": "расширение в стационарной группировке останется открытым."
+   },
+   "fixGroupOperat": {
+      "message": "блокировка блока с помощью пиктограммы подсвечивания"
+   },
+   "hoverMenu": {
+      "message": "зависать"
+   },
+   "howToSet": {
+      "message": "как установить?"
+   },
+   "iconSize": {
+      "message": "Размер иконок:"
+   },
+   "iconSizeMenu": {
+      "message": "размер"
+   },
+   "import_options": {
+      "message": "Импортировать"
+   },
+   "light": {
+      "message": "Светлый цвет"
+   },
+   "menuType": {
+      "message": "режим отображения меню:"
+   },
+   "nameExtDesc": {
+      "message": "Установить имя для каждого расширения"
+   },
+   "nameExtOperat": {
+      "message": "Нажмите на значок «Изменить», чтобы задать имя для расширения. Включите эту функцию в настройках просмотра для вступления в силу. Из-за ограничений браузера, псевдонимы не могут быть автоматически синхронизированы в настоящее время."
+   },
+   "nameMenu": {
+      "message": "Настройка имени"
+   },
+   "newGroupName": {
+      "message": "Новая группировка"
+   },
+   "optionGroupDelete": {
+      "message": "Вы действительно хотите удалить эту группу?"
+   },
+   "optionGroupDeleteAtLeaseOne": {
+      "message": "Держите хотя бы одну группу!"
+   },
+   "optionGroupDesc": {
+      "message": "Приспосабливайтесь к различным сценариям, группируя управление молнией, например, дома и компании."
+   },
+   "optionGroupModifyName": {
+      "message": "Введите название группы"
+   },
+   "optionGroupOperat": {
+      "message": "При текущей группировке блокировка группы после освещения путем нажатия значка расширения"
+   },
+   "optionGroupTitle": {
+      "message": "Управление группой"
+   },
+   "optionGroupTitleMenu": {
+      "message": "группа"
+   },
+   "optionName": {
+      "message": "параметры конфигурации"
+   },
+   "optionNameModifyName": {
+      "message": "Введите расширение имени, рекомендуется оставить 8 символов"
+   },
+   "optionRuleDelete": {
+      "message": "Вы уверены, что хотите удалить это правило?"
+   },
+   "otherDesc": {
+      "message": "В то же время вы можете оставить положительный комментарий или предложить поддержку в \u003Ca>Интернет-магазин Chrome\u003C/a>"
+   },
+   "otherDonate": {
+      "message": "Если вас это устраивает, вы можете сделать мне пожертвование и посоветовать мне продолжать улучшать его бесплатно :-)"
+   },
+   "otherEdgeDesc": {
+      "message": "В то же время вы можете оставить положительный комментарий или предложить поддержку в \u003Ca>Интернет-магазин Edge\u003C/a>"
+   },
+   "otherName": {
+      "message": "поддержка："
+   },
+   "rankBtn": {
+      "message": "Сбросить"
+   },
+   "rankName": {
+      "message": "Авто-сортировка:"
+   },
+   "rankNameMenu": {
+      "message": "Авто-сортировка"
+   },
+   "resetTipCancelText": {
+      "message": "группировка"
+   },
+   "resetTipContent": {
+      "message": "Смысл сброса заключается в удалении разблокированного расширения из текущей группы и восстановлении состояния текущей группы. Рекомендуется сначала сгруппировать или заблокировать расширение."
+   },
+   "resetTipDangerText": {
+      "message": "продолжить сброс"
+   },
+   "resetTipTitle": {
+      "message": "Если вы впервые используете функцию сброса"
+   },
+   "rightAppLaunch": {
+      "message": "начало"
+   },
+   "rightHomepage": {
+      "message": "Домашняя страница"
+   },
+   "rightLock_lock": {
+      "message": "Заблокировать"
+   },
+   "rightLock_unlock": {
+      "message": "Разблокировать"
+   },
+   "rightMoreDesc": {
+      "message": "Клик правой клавишей по увеличенной иконке для использования большего количества функций"
+   },
+   "rightMoreName": {
+      "message": "Клик правой клавишей"
+   },
+   "rightOption": {
+      "message": "Параметры"
+   },
+   "rightUninstall": {
+      "message": "Удалить"
+   },
+   "ruleAdd": {
+      "message": "Добавить"
+   },
+   "ruleExtAction": {
+      "message": "действие"
+   },
+   "ruleExtDesc": {
+      "message": "расширение, связанное с управлением сайтами"
+   },
+   "ruleExtEmpty": {
+      "message": "Не выбрано расширение"
+   },
+   "ruleExtList": {
+      "message": "Список правил"
+   },
+   "ruleExtThExt": {
+      "message": "расширение"
+   },
+   "ruleExtThNumber": {
+      "message": "номер"
+   },
+   "ruleExtThOperate": {
+      "message": "операция"
+   },
+   "ruleExtThUrl": {
+      "message": "согласование"
+   },
+   "ruleExtWhat": {
+      "message": "Что означают правила?"
+   },
+   "ruleMaxExtNum": {
+      "message": "Превышено максимальное количество доступных расширений:"
+   },
+   "ruleMaxNum": {
+      "message": "Превышено максимальное количество правил:"
+   },
+   "ruleMenu": {
+      "message": "правила"
+   },
+   "ruleSave": {
+      "message": "Сохранить"
+   },
+   "ruleTipContent1": {
+      "message": "\u003Cp style='color:#509EE3;font-weight: bold;'>выйти на торговый сайт Amazon, открыть Honey\u003C/p>\u003Cp style='color:#509EE3;font-weight: bold;'>правило: совпадающий адрес[\u003Cspan style='color:red;'>*amazon.com*\u003C/span>],расширение[Honey]\u003C/p>"
+   },
+   "ruleTipContent2": {
+      "message": "\u003Cp style='color:#509EE3;font-weight: bold;'>Что такое  Шаблон\u003C/p>\u003Cspan>\u003Cspan style='font-weight: bold;'>Звёздочка\u003C/span> \u003Cspan style='color:red;font-weight: bold;'>*\u003C/span> сопоставляет нуль или более символов.\u003C/p>\u003Cp>\u003Cspan style='font-weight: bold;'>Знак вопроса\u003C/span> \u003Cspan style='color:red;font-weight: bold;'>?\u003C/span> сопоставляет ровно один символ.\u003C/p>\u003C/br>\u003Cp>Обратите внимания, что правила, начинающиеся с \u003Cspan style='color:red;font-weight: bold;'>*.\u003C/span>\u003C/p>\u003Cp>Пример: \u003Cspan style='color:red;font-weight: bold;'>*.example.com\u003C/span> сопоставит как www.example.com, \u003Cspan style='font-weight: bold;'>ТАК И example.com\u003C/span>.\u003C/p>\u003Cp>Для того, чтобы сопоставить \u003Cspan style='font-weight: bold;'>только\u003C/span> поддомены, используйте \u003Cspan style='font-weight: bold;'>две\u003C/span> звёздочки: \u003Cspan style='color:red;font-weight: bold;'>**.example.com\u003C/span>.\u003C/p>\u003C/br>\u003Cspan style='color:#509EE3;font-weight: bold;'>Пример\u003C/span>\u003Cp>режим:\u003Cspan style='color:red;font-weight: bold;'>*.example.com\u003C/span> (или \u003Cspan style='color:red;font-weight: bold;'>.example.com\u003C/span>)\u003C/p>\u003Cp>сопоставит:a.example.com, a.b.example.com, example.com\u003C/p>\u003Cp>Не совпадает:example.test, example.com.test, anotherexample.com\u003C/p>\u003C/br>\u003Cp style='color:#509EE3;font-weight: bold;'>совпадение нескольких доменов\u003C/p>\u003Cp>amazon и taobao:\u003Cspan style='color:red;font-weight: bold;'>*amazon.com*|*taobao.com*\u003C/span>\u003C/p>\u003C/br>\u003Cp style='color:#509EE3;font-weight: bold;'>стандартная конфигурация\u003C/p>\u003Cp>совпадает Все страницы amazon:\u003Cspan style='color:red;font-weight: bold;'>*amazon.com*\u003C/span>\u003C/p>\u003Cp>совпадает товар на taobao:\u003Cspan style='color:red;font-weight: bold;'>*item.taobao.com*\u003C/span>\u003C/p>"
+   },
+   "ruleTipTitle1": {
+      "message": "Пример сцены"
+   },
+   "ruleTipTitle2": {
+      "message": "Настройка url"
+   },
+   "ruleUrlEmpty": {
+      "message": "Url не может быть пустым"
+   },
+   "ruleWildMulti": {
+      "message": "Поддержка нескольких доменных имен, разделенных '|'"
+   },
+   "ruleWildcard": {
+      "message": "Шаблон хоста"
+   },
+   "searcherEmpty": {
+      "message": "Нет результатов"
+   },
+   "searcherPlaceholder": {
+      "message": "Найди расширение"
+   },
+   "showApp": {
+      "message": "Показать приложение"
+   },
+   "showBadgeDesc": {
+      "message": "Показывать количество включенных расширений (кроме заблокированных)"
+   },
+   "showBadgeName": {
+      "message": "Показывать значок"
+   },
+   "showBadgeNameMenu": {
+      "message": "знак"
+   },
+   "showCols": {
+      "message": "Показать колонки:"
+   },
+   "showColsMenu": {
+      "message": "ряд"
+   },
+   "showExtName": {
+      "message": "Показывать название:"
+   },
+   "showExtNameDesc": {
+      "message": "Отображать название при наведении мышки на иконку расширения"
+   },
+   "showFastDesc": {
+      "message": "Значок быстрой настройки на всплывающей панели"
+   },
+   "showFastName": {
+      "message": "Показать значки ярлыков"
+   },
+   "showGridExtDesc": {
+      "message": "левое меню - Настройка имени, настройка псевдонимов для расширения."
+   },
+   "showGridExtName": {
+      "message": "Показывать имена расширений в режиме сетки"
+   },
+   "showGridExtTip": {
+      "message": "Сортировка станет [Сортировать по псевдониму расширения]"
+   },
+   "showGridMod": {
+      "message": "Вид сетки"
+   },
+   "showListMod": {
+      "message": "Представление списка"
+   },
+   "showMod": {
+      "message": "Режим отображения:"
+   },
+   "showModMenu": {
+      "message": "режим"
+   },
+   "showThemeMenu": {
+      "message": "внешний вид"
+   },
+   "sizeBig": {
+      "message": "большие"
+   },
+   "sizeNormal": {
+      "message": "нормальные"
+   },
+   "sizeSmall": {
+      "message": "маленькие"
+   },
+   "sortByName": {
+      "message": "Сортировать по имени расширения"
+   },
+   "sortByRank": {
+      "message": "Сортировать по частоте открытия"
+   },
+   "speedManageDesc": {
+      "message": "Кнопка для отключения всех расширений (кроме тем и заблокированых расширений)"
+   },
+   "speedManageLock": {
+      "message": "Клик по иконке блокирует/разблокирует расширение"
+   },
+   "speedManageName": {
+      "message": "Быстрое управление:"
+   },
+   "success_to_import": {
+      "message": "Импорт успешно, Перезагрузите страницу"
+   },
+   "supportMenu": {
+      "message": "поддержка"
+   },
+   "tipConfirmText": {
+      "message": "Понятно"
+   },
+   "tipResetRank": {
+      "message": "большие успеха!"
+   },
+   "tipSetSuc": {
+      "message": "Установка успеха!"
+   },
+   "tipsCon": {
+      "message": "идти"
+   },
+   "tipsEdgeUrl": {
+      "message": "Интернет-магазин Edge"
+   },
+   "tipsTitle": {
+      "message": "Не устанавливать другие расширения :-)"
+   },
+   "tipsUrl": {
+      "message": "Интернет-магазин Chrome"
+   },
+   "updateTipContent": {
+      "message": "\u003Cp style='font-size:15px;'>Вы можете выбрать, как отображать расширенное меню: зависание или щелчок\u003C/p>"
+   },
+   "updateTipTitle": {
+      "message": "обновить напоминание "
+   },
+   "viewSetMenu": {
+      "message": "Главные"
+   }
+}

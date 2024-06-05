@@ -1,0 +1,30 @@
+2024/06/05-15:22:46.522 4db Recovering log #1311
+2024/06/05-15:22:46.526 4db Level-0 table #1314: started
+2024/06/05-15:22:46.563 4db Level-0 table #1314: 2006 bytes OK
+2024/06/05-15:22:46.582 4db Delete type=3 #1306
+2024/06/05-15:22:46.587 4db Delete type=0 #1311
+2024/06/05-15:22:46.590 4dd Compacting 4@0 + 4@1 files
+2024/06/05-15:22:47.101 4dd Generated table #1316@0: 4 keys, 2456209 bytes
+2024/06/05-15:22:47.746 4dd Generated table #1317@0: 6 keys, 2552147 bytes
+2024/06/05-15:22:48.109 4dd Generated table #1318@0: 2 keys, 2455630 bytes
+2024/06/05-15:22:48.750 4dd Generated table #1319@0: 2 keys, 4472266 bytes
+2024/06/05-15:22:48.898 4dd Generated table #1320@0: 8 keys, 1009614 bytes
+2024/06/05-15:22:48.898 4dd Compacted 4@0 + 4@1 files => 12945866 bytes
+2024/06/05-15:22:48.905 4dd compacted to: files[ 0 5 6 0 0 0 0 ]
+2024/06/05-15:22:48.908 4dd Delete type=2 #1300
+2024/06/05-15:22:48.909 4dd Delete type=2 #1299
+2024/06/05-15:22:48.909 4dd Delete type=2 #1310
+2024/06/05-15:22:48.911 4dd Delete type=2 #1303
+2024/06/05-15:22:48.911 4dd Delete type=2 #1307
+2024/06/05-15:22:48.911 4dd Delete type=2 #1312
+2024/06/05-15:22:48.911 4dd Delete type=2 #1302
+2024/06/05-15:22:48.911 4dd Delete type=2 #1314
+2024/06/05-15:22:48.935 4db Compacting 1@1 + 1@2 files
+2024/06/05-15:22:49.433 4db Generated table #1321@1: 2 keys, 4472266 bytes
+2024/06/05-15:22:49.440 4db Compacted 1@1 + 1@2 files => 4472266 bytes
+2024/06/05-15:22:49.493 4db compacted to: files[ 0 4 6 0 0 0 0 ]
+2024/06/05-15:22:49.501 4db Delete type=2 #1259
+2024/06/05-15:22:49.501 4db Delete type=2 #1319
+2024/06/05-15:23:57.801 4d1 Level-0 table #1323: started
+2024/06/05-15:23:58.288 4d1 Level-0 table #1323: 6125155 bytes OK
+2024/06/05-15:23:58.295 4d1 Delete type=0 #1315

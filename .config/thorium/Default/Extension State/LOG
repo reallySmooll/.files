@@ -1,0 +1,5 @@
+2024/06/05-15:22:46.216 4fe Recovering log #243
+2024/06/05-15:22:46.240 4fe Level-0 table #245: started
+2024/06/05-15:22:46.307 4fe Level-0 table #245: 144937 bytes OK
+2024/06/05-15:22:46.335 4fe Delete type=0 #243
+2024/06/05-15:22:46.341 4fe Delete type=3 #241

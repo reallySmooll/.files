@@ -1,0 +1,425 @@
+{
+   "appearance": {
+      "message": "外観："
+   },
+   "automatic": {
+      "message": "自動フォローアップシステム"
+   },
+   "backup": {
+      "message": "バックアップ"
+   },
+   "backupDesc": {
+      "message": "同じGoogleアカウントの登録は自動的に同期されます（エイリアスの拡張は除く）。"
+   },
+   "cancel": {
+      "message": "キャンセル"
+   },
+   "changeViewBtn": {
+      "message": "切り替え"
+   },
+   "clickMenu": {
+      "message": "Click"
+   },
+   "closeAllBtn": {
+      "message": "リセット"
+   },
+   "commonGroup": {
+      "message": "一般"
+   },
+   "dark": {
+      "message": "こい色"
+   },
+   "defaultGroupName": {
+      "message": "デフォルト"
+   },
+   "disableOnly": {
+      "message": "マッチング後のみ無効になります"
+   },
+   "disableWhen": {
+      "message": "マッチング後はアクティブではありません"
+   },
+   "emptyShowListCon": {
+      "message": "拡張機能が有効になっていません"
+   },
+   "enableOnly": {
+      "message": "マッチング後のみ有効にする"
+   },
+   "enableWhen": {
+      "message": "マッチング後にアクティブにする"
+   },
+   "export_options": {
+      "message": "エクスポート"
+   },
+   "extDesr": {
+      "message": "オン/オフ迅速なすべての拡張機能を管理するためのキー、高速バッチ管理、インテリジェントな仕分け、右無負荷、ロックされ、コンフィギュレーションオプションは、心を思い出させたサイズのレイアウトを添字。、高速、シンプルで安全な。"
+   },
+   "extName": {
+      "message": "拡張機能マネージャー"
+   },
+   "extNameShort": {
+      "message": "拡張機能マネージャー"
+   },
+   "failed_to_import": {
+      "message": "インポート失敗"
+   },
+   "feedbackMenu": {
+      "message": "フィードバック"
+   },
+   "feedback_answer1": {
+      "message": "拡張機能のアイコンをクリックして、拡張機能を有効または無効にします。"
+   },
+   "feedback_answer2": {
+      "message": "我々は、ユーザが拡張をグループ化することを奨励している。「ロックする」とは、拡張がそのグループと結び付けられていることを意味する。いくつかの拡張を一時的に有効化する必要がある場合には、拡張アイコンをクリックすることで拡張を有効化し、使用した後に回復ボタンをクリックすることで拡張グループの状態を復元することができます。"
+   },
+   "feedback_answer3": {
+      "message": "一時的な拡張機能のクイッククローズ(ロックなし)"
+   },
+   "feedback_desc": {
+      "message": "改善するべき点、質問、設定オプションの不足、バグの発見など、提案したいことがありますか？ 拡張機能を使いやすくする提案ならば、どんなフィードバックでも大歓迎です。"
+   },
+   "feedback_error_amount": {
+      "message": "スクリーンショットのアップロード数が制限を超えています"
+   },
+   "feedback_error_filesize": {
+      "message": "ファイルサイズが大きすぎる(>1 MB)"
+   },
+   "feedback_fail": {
+      "message": "メッセージを送信できませんでした。 もう一度お試しください。"
+   },
+   "feedback_headline": {
+      "message": "こちらが参考になるかもしれません"
+   },
+   "feedback_process": {
+      "message": "送信しています。お待ちください"
+   },
+   "feedback_screenshot": {
+      "message": "スクリーンショットを添付する"
+   },
+   "feedback_send": {
+      "message": "フィードバックを送信する"
+   },
+   "feedback_success": {
+      "message": "フィードバックを送信していただきありがとうございます"
+   },
+   "feedback_suggestion1": {
+      "message": "拡張機能をすばやく有効または無効にするにはどうすればよいですか？"
+   },
+   "feedback_suggestion2": {
+      "message": "何がロッキング？"
+   },
+   "feedback_suggestion3": {
+      "message": "リセットとは？"
+   },
+   "fixGroup": {
+      "message": "固定"
+   },
+   "fixGroupDesc": {
+      "message": "固定されたグループの拡張は常にオープン状態であり、通常の拡張はグループに追加できます。"
+   },
+   "fixGroupOperat": {
+      "message": "拡張アイコンを点灯することでグループロックを行います"
+   },
+   "hoverMenu": {
+      "message": "Hover"
+   },
+   "howToSet": {
+      "message": "設定方法は？"
+   },
+   "iconSize": {
+      "message": "アイコン サイズ："
+   },
+   "iconSizeMenu": {
+      "message": "アイコン サイズ"
+   },
+   "import_options": {
+      "message": "インポート"
+   },
+   "light": {
+      "message": "うすい色"
+   },
+   "menuType": {
+      "message": "メニュー表示モード："
+   },
+   "nameExtDesc": {
+      "message": "各拡張子に好きな名前を付けます"
+   },
+   "nameExtOperat": {
+      "message": "アイコンを変更して、拡張子に名前を付けて、基本設定でこの機能を開きます。ブラウザの制限のため、エイリアスは自動的に同期できません。"
+   },
+   "nameMenu": {
+      "message": "名前設定"
+   },
+   "newGroupName": {
+      "message": "新しいグループ化"
+   },
+   "optionGroupDelete": {
+      "message": "このグループを削除してもよろしいですか？"
+   },
+   "optionGroupDeleteAtLeaseOne": {
+      "message": "少なくとも1つのグループを維持してください！"
+   },
+   "optionGroupDesc": {
+      "message": "家や会社などの雷管理をグループ化して、さまざまなシナリオに対応。"
+   },
+   "optionGroupModifyName": {
+      "message": "グループ名を入力してください"
+   },
+   "optionGroupOperat": {
+      "message": "現在のグループ化では、拡張アイコンをクリックして照明後にグループをロックします"
+   },
+   "optionGroupTitle": {
+      "message": "グループ管理"
+   },
+   "optionGroupTitleMenu": {
+      "message": "グループ管理"
+   },
+   "optionName": {
+      "message": "オプション"
+   },
+   "optionNameModifyName": {
+      "message": "名前の拡張子を入力し、4文字を推奨"
+   },
+   "optionRuleDelete": {
+      "message": "このルールを削除しますか？"
+   },
+   "otherDesc": {
+      "message": "同時に、\u003Ca>Chrome ウェブストア\u003C/a>で好意的なコメントをしたり、サポート提案を投稿したりすることもできます。"
+   },
+   "otherDonate": {
+      "message": "あなたがそれに満足しているならば、あなたは私にいくらかの感謝を与えて、無料でそれを改善し続けるように私に励ますことができます:-)"
+   },
+   "otherEdgeDesc": {
+      "message": "同時に、\u003Ca>Edge ウェブストア\u003C/a>で好意的なコメントをしたり、サポート提案を投稿したりすることもできます。"
+   },
+   "otherName": {
+      "message": "サポート："
+   },
+   "rankBtn": {
+      "message": "リセット"
+   },
+   "rankName": {
+      "message": "自動並べ替え："
+   },
+   "rankNameMenu": {
+      "message": "自動並べ替え"
+   },
+   "resetTipCancelText": {
+      "message": "グループ化したい"
+   },
+   "resetTipContent": {
+      "message": "リセットの意味は、現在のグループからロック解除された拡張機能を削除し、現在のグループの状態を復元することです。最初に拡張機能をグループ化またはロックすることをお勧めします。"
+   },
+   "resetTipDangerText": {
+      "message": "リセットを続ける"
+   },
+   "resetTipTitle": {
+      "message": "リセット機能を使用するのが初めての場合"
+   },
+   "rightAppLaunch": {
+      "message": "スタート"
+   },
+   "rightHomepage": {
+      "message": "ホーム"
+   },
+   "rightLock_lock": {
+      "message": "ロッキング"
+   },
+   "rightLock_unlock": {
+      "message": "アンロック"
+   },
+   "rightMoreDesc": {
+      "message": "拡張アイコンを右作動より多くの機能"
+   },
+   "rightMoreName": {
+      "message": "右メニュー："
+   },
+   "rightOption": {
+      "message": "オプション"
+   },
+   "rightUninstall": {
+      "message": "卸売"
+   },
+   "ruleAdd": {
+      "message": "ルールを追加"
+   },
+   "ruleExtAction": {
+      "message": "アクション"
+   },
+   "ruleExtDesc": {
+      "message": "Webサイトに従って対応する拡張機能を管理する"
+   },
+   "ruleExtEmpty": {
+      "message": "選択されていない拡張機能"
+   },
+   "ruleExtList": {
+      "message": "ルールリスト"
+   },
+   "ruleExtThExt": {
+      "message": "拡張"
+   },
+   "ruleExtThNumber": {
+      "message": "番号付け"
+   },
+   "ruleExtThOperate": {
+      "message": "アクション"
+   },
+   "ruleExtThUrl": {
+      "message": "マッチ"
+   },
+   "ruleExtWhat": {
+      "message": "ルールとは何ですか？"
+   },
+   "ruleMaxExtNum": {
+      "message": "設定可能な最大拡張数を超える:"
+   },
+   "ruleMaxNum": {
+      "message": "設定可能な最大ルール数を超える:"
+   },
+   "ruleMenu": {
+      "message": "ルール"
+   },
+   "ruleSave": {
+      "message": "ルールを保存"
+   },
+   "ruleTipContent1": {
+      "message": "\u003Cp style='color:#509EE3;font-weight: bold;'>場面：アマゾンショッピングサイトに入ると、Honeyを広げます\u003C/p>\u003Cp style='color:#509EE3;font-weight: bold;'>ルール：URLに合わせる[\u003Cspan style='color:red;'>*amazon.com*\u003C/span>]，拡張[Honey]\u003C/p>"
+   },
+   "ruleTipContent2": {
+      "message": "\u003Cp style='color:#509EE3;font-weight: bold;'>ワイルドカードとは何ですか\u003C/p>\u003Cspan>\u003Cspan style='font-weight: bold;'>アスタリスク\u003C/span> \u003Cspan style='color:red;font-weight: bold;'>*\u003C/span> は0個以上の文字にマッチします。\u003C/p>\u003Cp>\u003Cspan style='font-weight: bold;'>疑問符\u003C/span> \u003Cspan style='color:red;font-weight: bold;'>?\u003C/span> は1文字のみにマッチします。\u003C/p>\u003C/br>\u003Cp>\u003Cspan style='color:red;font-weight: bold;'>*.\u003C/span> から始まるルールは特別に扱います。\u003C/p>\u003Cp>例えば、\u003Cspan style='color:red;font-weight: bold;'>*.example.com\u003C/span> は www.example.comに限らず ，\u003Cspan style='font-weight: bold;'>example.comにも同様にマッチします。\u003C/span>\u003C/p>\u003Cp>サブドメイン\u003Cspan style='font-weight: bold;'>のみ\u003C/span>にマッチさせたいときは、\u003Cspan style='color:red;font-weight: bold;'>**.example.com\u003C/span>といった具合に、アスタリスクを\u003Cspan style='font-weight: bold;'>2つ\u003C/span>使用してください。\u003C/p>\u003C/br>\u003Cspan style='color:#509EE3;font-weight: bold;'>例えば\u003C/span>\u003Cp>モード:\u003Cspan style='color:red;font-weight: bold;'>*.example.com\u003C/span> (または \u003Cspan style='color:red;font-weight: bold;'>.example.com\u003C/span>)\u003C/p>\u003Cp>マッチ:a.example.com, a.b.example.com, example.com\u003C/p>\u003Cp>一致しません:example.test, example.com.test, anotherexample.com\u003C/p>\u003C/br>\u003Cp style='color:#509EE3;font-weight: bold;'>ドメイン名のマッチング\u003C/p>\u003Cp>amazonとtaobao：\u003Cspan style='color:red;font-weight: bold;'>*amazon.com*|*taobao.com*\u003C/span>\u003C/p>\u003C/br>\u003Cp style='color:#509EE3;font-weight: bold;'>一般的な設定\u003C/p>\u003Cp>amazonのすべてのページにマッチします：\u003Cspan style='color:red;font-weight: bold;'>*amazon.com*\u003C/span>\u003C/p>\u003Cp>taobao商品のページにマッチします：\u003Cspan style='color:red;font-weight: bold;'>*item.taobao.com*\u003C/span>\u003C/p>"
+   },
+   "ruleTipTitle1": {
+      "message": "シーン例"
+   },
+   "ruleTipTitle2": {
+      "message": "アドレスの設定方法"
+   },
+   "ruleUrlEmpty": {
+      "message": "urlは空ではいけません"
+   },
+   "ruleWildMulti": {
+      "message": "'|'で区切られた複数のドメイン名の一致をサポート"
+   },
+   "ruleWildcard": {
+      "message": "Hostワイルドカード"
+   },
+   "searcherEmpty": {
+      "message": "結果がありません"
+   },
+   "searcherPlaceholder": {
+      "message": "検索拡張"
+   },
+   "showApp": {
+      "message": "アプリを表示"
+   },
+   "showBadgeDesc": {
+      "message": "添字で有効になって一時的な拡張子の数を示す（有効にしますが、ロックされていません）"
+   },
+   "showBadgeName": {
+      "message": "視野角マーク"
+   },
+   "showBadgeNameMenu": {
+      "message": "視野角マーク"
+   },
+   "showCols": {
+      "message": "ディスプレイ列数："
+   },
+   "showColsMenu": {
+      "message": "ディスプレイ列数"
+   },
+   "showExtName": {
+      "message": "表示拡張機能："
+   },
+   "showExtNameDesc": {
+      "message": "アイコンの拡大の上にマウスの名前を表示します"
+   },
+   "showFastDesc": {
+      "message": "ポップアップパネルのクイック設定アイコン"
+   },
+   "showFastName": {
+      "message": "ショートカットアイコンを表示"
+   },
+   "showGridExtDesc": {
+      "message": "左側のメニューバーの[名前の設定]で、拡張エイリアスを設定します。それ以外の場合は、デフォルトのエイリアスを表示します。"
+   },
+   "showGridExtName": {
+      "message": "グリッドモードで拡張機能名を表示する"
+   },
+   "showGridExtTip": {
+      "message": "[拡張子名で並べ替え]ルールは[拡張子エイリアスで並べ替え]に変更されます"
+   },
+   "showGridMod": {
+      "message": "グリッド表示"
+   },
+   "showListMod": {
+      "message": "リストビュー"
+   },
+   "showMod": {
+      "message": "表示モード："
+   },
+   "showModMenu": {
+      "message": "表示モード"
+   },
+   "showThemeMenu": {
+      "message": "外観"
+   },
+   "sizeBig": {
+      "message": "大きい"
+   },
+   "sizeNormal": {
+      "message": "普通"
+   },
+   "sizeSmall": {
+      "message": "小さい"
+   },
+   "sortByName": {
+      "message": "拡張名で並べ替え"
+   },
+   "sortByRank": {
+      "message": "開始頻度に応じてソートする"
+   },
+   "speedManageDesc": {
+      "message": "すべての拡張機能を無効にするボタン（拡張子がロックされている場合を除き+テーマプラグイン）"
+   },
+   "speedManageLock": {
+      "message": "拡張機能をロック/アンロックしたいときは対応のアイコンをクリックしてください："
+   },
+   "speedManageName": {
+      "message": "速整理："
+   },
+   "success_to_import": {
+      "message": "インポートに成功しました。ページ読み込みの最新設定を再読み込みしてください。"
+   },
+   "supportMenu": {
+      "message": "サポート"
+   },
+   "tipConfirmText": {
+      "message": "分かりました"
+   },
+   "tipResetRank": {
+      "message": "リセットしました！"
+   },
+   "tipSetSuc": {
+      "message": "セッティング応用されました！"
+   },
+   "tipsCon": {
+      "message": "の周りに行きます"
+   },
+   "tipsEdgeUrl": {
+      "message": "Edge ウェブストア"
+   },
+   "tipsTitle": {
+      "message": "他の拡張機能をインストールしません :-)"
+   },
+   "tipsUrl": {
+      "message": "Chrome ウェブストア"
+   },
+   "updateTipContent": {
+      "message": "\u003Cp style='font-size:15px;'>拡張メニューの表示方法を選択できます:HoverまたはClick\u003C/p>"
+   },
+   "updateTipTitle": {
+      "message": "更新提示"
+   },
+   "viewSetMenu": {
+      "message": "一般"
+   }
+}

@@ -1,0 +1,425 @@
+{
+   "appearance": {
+      "message": "외관:"
+   },
+   "automatic": {
+      "message": "시스템을 자동으로 따르십시오"
+   },
+   "backup": {
+      "message": "데이터 백업"
+   },
+   "backupDesc": {
+      "message": "다른 기기에서 동일한 Google 계정으로 로그인하면 자동으로 동기화될 수 있습니다(확장 별칭 제외)"
+   },
+   "cancel": {
+      "message": "취소"
+   },
+   "changeViewBtn": {
+      "message": "전환"
+   },
+   "clickMenu": {
+      "message": "팝업하려면 클릭하세요."
+   },
+   "closeAllBtn": {
+      "message": "재설정"
+   },
+   "commonGroup": {
+      "message": "일반 그룹"
+   },
+   "dark": {
+      "message": "짙은 색"
+   },
+   "defaultGroupName": {
+      "message": "기본 그룹화"
+   },
+   "disableOnly": {
+      "message": "일치하는 경우에만 닫기"
+   },
+   "disableWhen": {
+      "message": "일치하는 경우 닫기"
+   },
+   "emptyShowListCon": {
+      "message": "활성화된 확장 프로그램이 없습니다"
+   },
+   "enableOnly": {
+      "message": "일치만 활성화됨"
+   },
+   "enableWhen": {
+      "message": "일치 후 열기"
+   },
+   "export_options": {
+      "message": "내보내기"
+   },
+   "extDesr": {
+      "message": "모든 확장의 원클릭 관리, 빠른 활성화/비활성화, 일괄 번개 관리, 지능형 정렬, 마우스 오른쪽 버튼 클릭 제거, 잠금, 옵션 구성, 모서리 표시 미리 알림, 원하는 크기 레이아웃. 빠르고 간단하며 안전합니다."
+   },
+   "extName": {
+      "message": "확장 관리자"
+   },
+   "extNameShort": {
+      "message": "확장 관리자(Extension Manager)"
+   },
+   "failed_to_import": {
+      "message": "가져오기 실패"
+   },
+   "feedbackMenu": {
+      "message": "피드백"
+   },
+   "feedback_answer1": {
+      "message": "확장 프로그램을 활성화 및 비활성화하려면 확장 프로그램 아이콘을 클릭하십시오."
+   },
+   "feedback_answer2": {
+      "message": "사용자가 확장 프로그램을 그룹화할 것을 권장합니다. ‘잠금’은 확장 프로그램이 그룹에 바인딩됨을 의미합니다. 특정 확장을 일시적으로 활성화해야 하는 경우 확장 아이콘을 클릭하여 확장을 활성화할 수 있으며, 사용 후 복원 버튼을 클릭하여 확장 그룹의 상태를 복원할 수 있습니다."
+   },
+   "feedback_answer3": {
+      "message": "임시 사용 확장 을 빠르게 닫 습 니 다(잠 금 되 지 않 음)"
+   },
+   "feedback_desc": {
+      "message": "개선 제안,문제,설정 옵션 이 부족 하거나 bug 를 발 견 했 습 니까?확 장 된 체험 을 향상 시 키 기 위해 서,나 는 당신 이 피드백 을 제공 해 주어 서 매우 기 쁩 니 다."
+   },
+   "feedback_error_amount": {
+      "message": "업로드된 스크린샷 수가 제한을 초과했습니다."
+   },
+   "feedback_error_filesize": {
+      "message": "파일 크기가 너무 큽니다(> 1MB)"
+   },
+   "feedback_fail": {
+      "message": "메시지를 보내지 못했습니다. 다시 시도하십시오."
+   },
+   "feedback_headline": {
+      "message": "여기에 관심이 있을 수 있습니다."
+   },
+   "feedback_process": {
+      "message": "보내는 중입니다. 잠시만 기다려 주십시오."
+   },
+   "feedback_screenshot": {
+      "message": "스크린샷 첨부"
+   },
+   "feedback_send": {
+      "message": "의견 보내기"
+   },
+   "feedback_success": {
+      "message": "의견 주셔서 감사합니다"
+   },
+   "feedback_suggestion1": {
+      "message": "확장 기능을 빠르게 활성화 및 비활성화하는 방법은 무엇입니까?"
+   },
+   "feedback_suggestion2": {
+      "message": "잠금이란 무엇입니까?"
+   },
+   "feedback_suggestion3": {
+      "message": "리 셋 이란 무엇 입 니까?"
+   },
+   "fixGroup": {
+      "message": "고정된 그룹화"
+   },
+   "fixGroupDesc": {
+      "message": "고정 그룹 아래의 확장은 항상 열려 있으며 자주 사용하는 확장을 그룹에 추가할 수 있습니다."
+   },
+   "fixGroupOperat": {
+      "message": "확장 아이콘을 클릭하여 그룹 잠금"
+   },
+   "hoverMenu": {
+      "message": "플로팅 팝업"
+   },
+   "howToSet": {
+      "message": "설정 방법은?"
+   },
+   "iconSize": {
+      "message": "아이콘 크기:"
+   },
+   "iconSizeMenu": {
+      "message": "아이콘 크기"
+   },
+   "import_options": {
+      "message": "가져오기"
+   },
+   "light": {
+      "message": "연한 색상"
+   },
+   "menuType": {
+      "message": "확장 옵션 표시 모드:"
+   },
+   "nameExtDesc": {
+      "message": "각 확장에 원하는 이름을 지정하십시오."
+   },
+   "nameExtOperat": {
+      "message": "편집 아이콘을 클릭하고 확장 프로그램 이름을 지정하고 기본 설정에서 이 기능을 활성화하면 적용됩니다. 브라우저 제한으로 인해 당분간 별칭을 자동으로 동기화할 수 없습니다."
+   },
+   "nameMenu": {
+      "message": "이름 설정"
+   },
+   "newGroupName": {
+      "message": "새 그룹"
+   },
+   "optionGroupDelete": {
+      "message": "이 그룹을 삭제하시겠습니까?"
+   },
+   "optionGroupDeleteAtLeaseOne": {
+      "message": "그룹 을 하나 이상 유지 해 야 합 니 다!"
+   },
+   "optionGroupDesc": {
+      "message": "그룹 을 나 누 어 확장 상 태 를 관리 하고 서로 다른 장면,예 를 들 어 집,회사 등 을 배치 합 니 다."
+   },
+   "optionGroupModifyName": {
+      "message": "그룹 이름을 입력하세요. 한자 2~6자로 유지하는 것이 좋습니다."
+   },
+   "optionGroupOperat": {
+      "message": "현재 그룹 아래에서 확장 아이콘을 클릭하여 그룹을 잠글 수 있습니다."
+   },
+   "optionGroupTitle": {
+      "message": "그룹 관리"
+   },
+   "optionGroupTitleMenu": {
+      "message": "그룹 관리"
+   },
+   "optionName": {
+      "message": "옵션 구성"
+   },
+   "optionNameModifyName": {
+      "message": "확장 별칭을 입력하십시오. 중국어의 경우 4자, 기타 언어의 경우 8자를 예약하는 것이 좋습니다."
+   },
+   "optionRuleDelete": {
+      "message": "정말 이 규칙을 삭제하시겠습니까?"
+   },
+   "otherDesc": {
+      "message": "동시에 \u003Ca>Chrome 웹 스토어\u003C/a>에 로그인하여 칭찬을 하거나 도움이 되는 제안을 할 수도 있습니다."
+   },
+   "otherDonate": {
+      "message": "만족하신다면 저에게 약간의 칭찬을 해주시고 계속해서 무료로 보완하도록 격려해 주시면 감사하겠습니다:-)"
+   },
+   "otherEdgeDesc": {
+      "message": "동시에 \u003Ca>Edge 웹 스토어\u003C/a>에 로그인하여 칭찬을 하거나 지지적인 제안을 제공할 수도 있습니다."
+   },
+   "otherName": {
+      "message": "지원:"
+   },
+   "rankBtn": {
+      "message": "정렬 재설정"
+   },
+   "rankName": {
+      "message": "확장 정렬:"
+   },
+   "rankNameMenu": {
+      "message": "확장된 정렬"
+   },
+   "resetTipCancelText": {
+      "message": "그룹화하고 싶습니다"
+   },
+   "resetTipContent": {
+      "message": "재설정은 현재 그룹에서 잠금 해제된 확장을 제거하고 현재 그룹의 상태를 복원하는 것을 의미합니다. 먼저 \u003Cspan style='color:#00aced'>그룹화\u003C/span>를 수행하거나 먼저 확장 프로그램을 \u003Cspan style='color:#00aced'>잠그십시오\u003C/span>."
+   },
+   "resetTipDangerText": {
+      "message": "재설정 계속"
+   },
+   "resetTipTitle": {
+      "message": "초기화 기능을 처음 사용하는 경우"
+   },
+   "rightAppLaunch": {
+      "message": "실행"
+   },
+   "rightHomepage": {
+      "message": "홈페이지"
+   },
+   "rightLock_lock": {
+      "message": "잠금"
+   },
+   "rightLock_unlock": {
+      "message": "잠금 해제"
+   },
+   "rightMoreDesc": {
+      "message": "더 많은 기능을 작동하려면 확장 아이콘을 마우스 오른쪽 버튼으로 클릭하십시오."
+   },
+   "rightMoreName": {
+      "message": "오른쪽 클릭 메뉴:"
+   },
+   "rightOption": {
+      "message": "옵션"
+   },
+   "rightUninstall": {
+      "message": "제거"
+   },
+   "ruleAdd": {
+      "message": "새 규칙 추가"
+   },
+   "ruleExtAction": {
+      "message": "동작"
+   },
+   "ruleExtDesc": {
+      "message": "다양한 웹사이트에 따라 관련 확장 프로그램 관리"
+   },
+   "ruleExtEmpty": {
+      "message": "확장자가 선택되지 않았습니다."
+   },
+   "ruleExtList": {
+      "message": "규칙 목록"
+   },
+   "ruleExtThExt": {
+      "message": "확장자"
+   },
+   "ruleExtThNumber": {
+      "message": "일련 번호"
+   },
+   "ruleExtThUrl": {
+      "message": "일치"
+   },
+   "ruleExtTheOperate": {
+      "message": "조작"
+   },
+   "ruleExtWhat": {
+      "message": "규칙이 무엇입니까?"
+   },
+   "ruleMaxExtNum": {
+      "message": "구성 가능한 최대 확장 수를 초과했습니다:"
+   },
+   "ruleMaxNum": {
+      "message": "구성 가능한 규칙의 최대 수를 초과했습니다."
+   },
+   "ruleMenu": {
+      "message": "규칙"
+   },
+   "ruleSave": {
+      "message": "저장 규칙"
+   },
+   "ruleTipContent1": {
+      "message": "\u003Cp style='color:#509EE3;font-weight: bold;'>시나리오: Amazon 쇼핑 웹사이트에 들어가서 확장된 Honey 쇼핑 플러그인을 엽니다.\u003C/p>\u003Cp style='color:#509EE3 ;font -weight: bold;'>규칙: 일치 URL [\u003Cspan style='color:red;'>*amazon.com*\u003C/span>], 확장 [Honey]\u003C/p>"
+   },
+   "ruleTipContent2": {
+      "message": "\u003Cp style='color:#509EE3;font-weight: bold;'>와일드카드란 무엇입니까\u003C/p>\u003Cspan>\u003Cspan style='font-weight: bold;'>별표\u003C/p> span> \u003Cspan style='color:red;font-weight: bold;'>*\u003C/span>는 0개 이상의 문자와 일치합니다.\u003C/p>\u003Cp>\u003Cspan style='font-weight: bold; '> 물음표\u003C/span> \u003Cspan style='color:red;font-weight: bold;'>?\u003C/span>는 모든 문자와 일치합니다.\u003C/p>\u003C/br>\u003Cp>단어 \u003Cspan>에 주의하십시오. style='color:red;font-weight: bold;'>*.\u003C/span> 시작 부분의 규칙은 특별히 처리되어 하위 도메인 이름과 자체 모두와 일치합니다.\u003C/p>\u003Cp>예: \u003C span style=' color:red;font-weight: bold;'>*.example.com\u003C/span>은 www.example.com, \u003Cspan style='font-weight: bold;'>와 일치할 수 있으며 다음도 가능합니다. example.com과 일치\u003C /span> .\u003C/p>\u003Cp>\u003Cspan style='font-weight: bold;'>하위 도메인만 일치해야 하는 경우\u003C/span>, \u003Cspan style='font- weight: bold;'> 두 개의 \u003C/span> 별표로 시작합니다(예: \u003Cspan style='color:red;font-weight: bold;'>**.example.com\u003C/span>).\u003C/p>\u003C /br>\u003Cspan style ='color:#509EE3;font-weight: bold;'>예\u003C/span>\u003Cp>모드:\u003Cspan style='color:red;font-weight: bold;'>*. example.com\u003C/span > (또는 \u003Cspan style='color:red;font-weight: bold;'>.example.com\u003C/span>)\u003C/p>\u003Cp>일치: a.example.com, abexample.com, example .com\u003C/p>\u003Cp>일치하지 않음: example.test, examplel e.com.test, anotherexample.com\u003C/p>\u003C/br>\u003Cp style='color:#509EE3;font-weight: bold;'>다중 도메인 일치\u003C/p>\u003Cp>amazon 및 taobao 일치 제품 페이지: \u003Cspan style='color:red;font-weight: bold;'>*amazon.com*|*item.taobao.com*\u003C/span>\u003C/p>\u003C/br>\u003Cp style=' color :#509EE3;font-weight: bold;'>일반 구성\u003C/p>\u003Cp>amazon의 모든 페이지와 일치: \u003Cspan style='color:red;font-weight: bold;'>*amazon.com* \u003C/p> span>\u003C/p>\u003Cp>taobao 제품 페이지 일치: \u003Cspan style='color:red;font-weight: bold;'>*item.taobao.com*\u003C/span>\u003C/p> "
+   },
+   "ruleTipTitle1": {
+      "message": "장면 예"
+   },
+   "ruleTipTitle2": {
+      "message": "주소 설정 방법"
+   },
+   "ruleUrlEmpty": {
+      "message": "주소는 비워둘 수 없습니다"
+   },
+   "ruleWildMulti": {
+      "message": "여러 도메인 이름 일치 지원, |로 ​​구분됨"
+   },
+   "ruleWildcard": {
+      "message": "도메인 이름 와일드카드 주소"
+   },
+   "searcherEmpty": {
+      "message": "관련 확장 프로그램이나 응용 프로그램을 찾을 수 없습니다"
+   },
+   "searcherPlaceholder": {
+      "message": "검색 확장 프로그램"
+   },
+   "showApp": {
+      "message": "응용 프로그램 표시"
+   },
+   "showBadgeDesc": {
+      "message": "임시로 활성화된 확장의 총 수 표시(활성화되었지만 잠금 해제된 확장)."
+   },
+   "showBadgeName": {
+      "message": "모서리 표시 표시"
+   },
+   "showBadgeNameMenu": {
+      "message": "모서리 표시 표시"
+   },
+   "showCols": {
+      "message": "열 수 표시:"
+   },
+   "showColsMenu": {
+      "message": "열 수 표시"
+   },
+   "showExtName": {
+      "message": "확장 이름 보이 기:"
+   },
+   "showExtNameDesc": {
+      "message": "확장 아이콘 위에 마우스를 놓으면 확장 아이콘의 이름이 표시됩니다."
+   },
+   "showFastDesc": {
+      "message": "팝업 패널의 빠른 설정 아이콘"
+   },
+   "showFastName": {
+      "message": "바로 가기 아이콘 표시"
+   },
+   "showGridExtDesc": {
+      "message": "왼쪽 메뉴 모음-이름 설정에서 확장 별칭을 설정하십시오. 그렇지 않으면 기본 별칭이 표시됩니다."
+   },
+   "showGridExtName": {
+      "message": "격자 모드에서 확장 이름 표시"
+   },
+   "showGridExtTip": {
+      "message": "열면 [확장자 이름으로 정렬] 규칙이 [확장자 별칭으로 정렬]로 변경됩니다."
+   },
+   "showGridMod": {
+      "message": "그리드 보기"
+   },
+   "showListMod": {
+      "message": "목록 보기"
+   },
+   "showMod": {
+      "message": "디스플레이 모드:"
+   },
+   "showModMenu": {
+      "message": "디스플레이 모드"
+   },
+   "showThemeMenu": {
+      "message": "모양 표시"
+   },
+   "sizeBig": {
+      "message": "큰"
+   },
+   "sizeNormal": {
+      "message": "표준"
+   },
+   "sizeSmall": {
+      "message": "작은"
+   },
+   "sortByName": {
+      "message": "확장명으로 정렬"
+   },
+   "sortByRank": {
+      "message": "열기 빈도별로 정렬"
+   },
+   "speedManageDesc": {
+      "message": "모든 확장을 비활성화하려면 원 클릭(잠긴 확장 + 테마 플러그인 제외)"
+   },
+   "speedManageLock": {
+      "message": "확장 프로그램을 '잠금' 또는 '잠금 해제'하려면 아래 아이콘을 클릭하십시오."
+   },
+   "speedManageName": {
+      "message": "Lightning 관리:"
+   },
+   "success_to_import": {
+      "message": "가져오기에 성공했습니다. 최신 구성을 읽으려면 페이지를 새로고침하세요!"
+   },
+   "supportMenu": {
+      "message": "지원"
+   },
+   "tipCon": {
+      "message": "더 많은 것 을 발견 하 다"
+   },
+   "tipConfirmText": {
+      "message": "알았다"
+   },
+   "tipResetRank": {
+      "message": "정렬이 재설정되었습니다!"
+   },
+   "tipSetSuc": {
+      "message": "성공적으로 설정했습니다!"
+   },
+   "tipUrl": {
+      "message": "크롬 웹 스토어"
+   },
+   "tipsEdgeUrl": {
+      "message": "에지 웹 스토어"
+   },
+   "tipsTitle": {
+      "message": "설치된 확장 프로그램이 없습니다 :-)"
+   },
+   "updateTipContent": {
+      "message": "\u003Cp style='font-size:15px;'>확장 옵션 표시 방법을 선택할 수 있습니다.\u003C/p>\u003Cp>\u003Cspan style='color:#00aced'>설정 확장 옵션 표시 방법\u003C/span>플로팅 팝업 선택 또는 팝업 클릭\u003C/p>"
+   },
+   "updateTipTitle": {
+      "message": "업데이트 알림"
+   },
+   "viewSetMenu": {
+      "message": "기본 설정"
+   }
+}

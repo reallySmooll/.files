@@ -1,0 +1,6 @@
+2024/05/17-16:49:54.492 5e6 Creating DB /home/smoolldev/.config/thorium/Default/IndexedDB/https_www.tiktok.com_0.indexeddb.leveldb since it was missing.
+2024/05/17-16:49:54.524 5e6 Delete type=3 #1
+2024/05/17-16:50:43.123 5e7 Level-0 table #5: started
+2024/05/17-16:50:43.128 5e7 Level-0 table #5: 1539 bytes OK
+2024/05/17-16:50:43.133 5e7 Delete type=0 #3
+2024/05/17-16:50:43.134 5e7 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

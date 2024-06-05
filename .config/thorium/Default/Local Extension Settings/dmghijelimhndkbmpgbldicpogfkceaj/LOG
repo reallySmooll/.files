@@ -1,0 +1,5 @@
+2024/06/05-15:22:45.826 4db Recovering log #180
+2024/06/05-15:22:45.832 4db Level-0 table #183: started
+2024/06/05-15:22:45.873 4db Level-0 table #183: 124 bytes OK
+2024/06/05-15:22:45.900 4db Delete type=3 #178
+2024/06/05-15:22:45.901 4db Delete type=0 #180

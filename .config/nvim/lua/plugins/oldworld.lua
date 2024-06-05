@@ -1,0 +1,30 @@
+--require("oldworld").setup({
+--    terminal_colors = false, -- enable terminal colors
+--    styles = { -- You can pass the style using the format: style = true
+--        comments = { italic = true }, -- style for comments
+--        keywords = {}, -- style for keywords
+--        identifiers = {}, -- style for identifiers
+--        functions = { italic = true }, -- style for functions
+--        variables = {}, -- style for variables
+--        booleans = {}, -- style for booleans
+--    },
+--    integrations = { -- You can disable/enable integrations
+--        alpha = true,
+--        cmp = true,
+--        flash = true,
+--        gitsigns = true,
+--        hop = false,
+--        indent_blankline = true,
+--        lazy = true,
+--        lsp = true,
+--        markdown = true,
+--        mason = true,
+--        navic = false,
+--        neo_tree = false,
+--        noice = true,
+--        notify = true,
+--        rainbow_delimiters = true,
+--        telescope = true,
+--        treesitter = true,
+--    }
+--})

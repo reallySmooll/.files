@@ -1,0 +1,73 @@
+--local get_hex = require("cokeline.hlgroups").get_hl_attr
+--
+--local colors = {
+--    red     = "#f38ba8",
+--    bg      = "#202021",
+--    fg      = "#27272a",
+--    nvim_fg = "#f5b14a"
+--}
+--
+--vim.api.nvim_set_hl(0, "TabLineFill", { bg = colors.bg })
+--
+--require("cokeline").setup({
+--    diagnostics = "nvim_lsp",
+--    show_if_buffers_are_at_least = 2,
+--    buffers = {
+--        focus_on_delete = "next"
+--    },
+--    default_hl = {
+--        fg = function (buffer)
+--            return
+--                buffer.is_focused
+--                and get_hex("Normal", "fg")
+--                or get_hex("Comment", "fg")
+--        end,
+--        bg = colors.fg,
+--    },
+--    fill_hl = "TabLineFill",
+--    components = {
+--        {
+--            text = " ",
+--            bg = colors.bg
+--        },
+--        {
+--            text = "",
+--            fg = colors.fg,
+--            bg = colors.bg
+--        },
+--        {
+--            text = function(buffer)
+--                return buffer.devicon.icon
+--            end,
+--            fg = function(buffer)
+--                return buffer.devicon.color
+--            end
+--        },
+--        { text = function(buffer) return buffer.filename .. " " end },
+--        {
+--            text = function (buffer)
+--                return buffer.is_modified and "•" or ""
+--            end
+--        },
+--        {
+--            text = "",
+--            fg = colors.fg,
+--            bg = colors.bg
+--        }
+--    },
+--    sidebar = {
+--        filetype = { "NvimTree" },
+--        components = {
+--            {
+--                text = "  ",
+--                bg = colors.bg
+--            },
+--            {
+--                text =  "󰙅 File Explorer" ,
+--                fg = colors.nvim_fg,
+--                bg = colors.bg,
+--                bold = true
+--            }
+--        }
+--    }
+--})
