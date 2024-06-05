@@ -72,12 +72,12 @@ start_setup()
 install_programs()
 {
     # Function installs all programs and dependencies needed for the config to run well.
-    clear
+    echo
 
     install_yay
     install_pkglist
-    install_starship
-    install_packer
+    #install_starship
+    #install_packer
     install_dwm
     install_dwmblocks
 }
@@ -92,7 +92,7 @@ install_yay()
     makepkg -si --noconfirm
     sleep 2
 
-    clear
+    echo
 
     echo Successfully installed yay!
     echo Removing yay directory...
@@ -107,14 +107,14 @@ install_yay()
 
 install_pkglist()
 {
-    clear
+    echo
 
     echo Installing programs from pkglist.pacman...
 
     sudo pacman -S --needed --noconfirm - < ./pkglist.pacman
     sleep 2
 
-    clear
+    echo
 
     echo Successfully installed programs from pkglist.pacman!
     echo Installing programs from pkglist.yay...
@@ -122,7 +122,7 @@ install_pkglist()
     yay -S --needed --noconfirm - < ./pkglist.yay
     sleep 2
 
-    clear
+    echo
 
     echo Successfully installed programs from pkglist.yay!
 
@@ -131,7 +131,7 @@ install_pkglist()
 
 install_starship()
 {
-    clear
+    echo
 
     echo Installing starship.rs...
 
@@ -145,15 +145,9 @@ install_starship()
 
 install_packer()
 {
-    clear
+    echo
 
     echo Installing packer...
-
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-    echo Installing neovim plugins...
-    nvim +PackerSync
 
     echo Compiling telescope-fzf-native.nvim
     cd ~/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim/
@@ -167,7 +161,7 @@ install_packer()
 
 install_dwm()
 {
-    clear
+    echo
 
     echo Installing dwm...
 
@@ -182,7 +176,7 @@ install_dwm()
 
 install_dwmblocks()
 {
-    clear
+    echo
 
     echo Installing dwmblocks...
 
@@ -201,7 +195,7 @@ install_dwmblocks()
 
 copy_configs()
 {
-    clear
+    echo
 
     echo Installing configs...
 
@@ -235,7 +229,7 @@ copy_configs()
 
 copy_themes_and_icons()
 {
-    clear
+    echo
 
     echo Installing themes and icons...
 
@@ -253,7 +247,7 @@ copy_themes_and_icons()
 
 copy_fonts()
 {
-    clear
+    echo
 
     echo Installing fonts...
 
@@ -266,7 +260,7 @@ copy_fonts()
 
 copy_everything_else()
 {
-    clear
+    echo
 
     echo Installing .xprofile...
 
@@ -307,7 +301,7 @@ copy_everything_else()
 
 end()
 {
-    clear
+    echo
 
     echo Finished installing my config!
 
