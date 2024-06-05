@@ -1,9 +1,9 @@
 # GRUB boot loader configuration
 
-GRUB_DEFAULT="Arch Linux"
+GRUB_DEFAULT="Opcje zaawansowane dla systemu Arch Linux>Arch Linux, z systemem Linux linux-zen"
 GRUB_TIMEOUT="3"
 GRUB_DISTRIBUTOR="Arch"
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7 modprobe.blacklist=atomisp modprobe.blacklist=intel_atomisp2_pm threadirqs tsc=reliable clocksource=tsc mitigations=off split_lock_detect=off"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7 quiet modprobe.blacklist=atomisp modprobe.blacklist=intel_atomisp2_pm threadirqs tsc=reliable clocksource=tsc mitigations=off split_lock_detect=off intel_idle.max_cstate=0 i915.enable_fbc=1"
 GRUB_CMDLINE_LINUX="rootfstype=ext4"
 
 # Preload both GPT and MBR modules so that they are not missed
@@ -39,12 +39,12 @@ GRUB_DISABLE_RECOVERY="true"
 
 # Uncomment and set to the desired menu colors.  Used by normal and wallpaper
 # modes only.  Entries specified as foreground/background.
-#GRUB_COLOR_NORMAL="light-blue/black"
-#GRUB_COLOR_HIGHLIGHT="light-cyan/blue"
+export GRUB_COLOR_NORMAL="light-blue/black"
+export GRUB_COLOR_HIGHLIGHT="light-cyan/blue"
 
 # Uncomment one of them for the gfx desired, a image background or a gfxtheme
 #GRUB_BACKGROUND="/path/to/wallpaper"
-#GRUB_THEME="/path/to/gfxtheme"
+GRUB_THEME="/boot/grub/themes/arch-linux/theme.txt"
 
 # Uncomment to get a beep at GRUB start
 #GRUB_INIT_TUNE="480 440 1"
@@ -60,4 +60,6 @@ GRUB_DISABLE_RECOVERY="true"
 # documentation on GRUB_DISABLE_OS_PROBER, if still want to enable this
 # functionality install os-prober and uncomment to detect and include other
 # operating systems.
-#GRUB_DISABLE_OS_PROBER="false"
+GRUB_DISABLE_OS_PROBER="true"
+
+GRUB_HIDDEN_TIMEOUT="0"
