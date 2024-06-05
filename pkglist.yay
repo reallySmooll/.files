@@ -1,11 +1,12 @@
 bdf-unifont
 canon-pixma-mg2500-complete
 deadd-notification-center-bin
-google-chrome
-openrazer-meta
+mingw-w64-cmake
+mpris-proxy-service
+openrazer-meta-git
 polychromatic
 qrcp-bin
 scolorpicker
-spotify
+thorium-browser-bin
 volctl
 yay
