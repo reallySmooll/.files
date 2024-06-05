@@ -1,8 +1,0 @@
-2024/06/05-15:22:46.617 4db Recovering log #1455
-2024/06/05-15:22:46.640 4db Level-0 table #1464: started
-2024/06/05-15:22:46.661 4db Level-0 table #1464: 1970 bytes OK
-2024/06/05-15:22:46.996 4db Delete type=0 #1455
-2024/06/05-15:22:46.999 4db Delete type=3 #1450
-2024/06/05-15:24:43.740 4d1 Level-0 table #1467: started
-2024/06/05-15:24:44.156 4d1 Level-0 table #1467: 6192053 bytes OK
-2024/06/05-15:24:44.173 4d1 Delete type=0 #1465
