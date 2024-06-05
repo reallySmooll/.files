@@ -72,7 +72,7 @@ start_setup()
 install_programs()
 {
     # Function installs all programs and dependencies needed for the config to run well.
-    echo
+    clear
 
     install_yay
     install_pkglist
@@ -85,7 +85,6 @@ install_programs()
 install_yay()
 {
     echo Installing yay...
-
     sudo pacman -S --needed git base-devel
     git clone https://aur.archlinux.org/yay.git
     cd ./yay
@@ -93,10 +92,8 @@ install_yay()
     sleep 2
 
     echo
-
     echo Successfully installed yay!
     echo Removing yay directory...
-
     cd ../
     rm -rf ./yay
 
@@ -110,20 +107,16 @@ install_pkglist()
     echo
 
     echo Installing programs from pkglist.pacman...
-
     sudo pacman -S --needed --noconfirm - < ./pkglist.pacman
     sleep 2
 
     echo
-
     echo Successfully installed programs from pkglist.pacman!
     echo Installing programs from pkglist.yay...
-
     yay -S --needed --noconfirm - < ./pkglist.yay
     sleep 2
 
     echo
-
     echo Successfully installed programs from pkglist.yay!
 
     sleep 2
@@ -134,7 +127,6 @@ install_starship()
     echo
 
     echo Installing starship.rs...
-
     curl -sS https://starship.rs/install.sh | sh
 
     echo
@@ -148,7 +140,6 @@ install_packer()
     echo
 
     echo Installing packer...
-
     echo Compiling telescope-fzf-native.nvim
     cd ~/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim/
     make
@@ -164,7 +155,6 @@ install_dwm()
     echo
 
     echo Installing dwm...
-
     cd ~/dotfiles/suckless/dwm/
     sudo make clean install
     cd ../..
@@ -179,13 +169,11 @@ install_dwmblocks()
     echo
 
     echo Installing dwmblocks...
-
     cd ~/dotfiles/suckless/dwmblocks-async
     sudo make clean install
 
     echo
     echo Successfully installed dwmblocks!
-
     cd modules
     ./install.sh
     cd ../../../
@@ -198,26 +186,22 @@ copy_configs()
     echo
 
     echo Installing configs...
-
     mkdir ~/.config/
     cp -r ./.config/* ~/.config/
 
     echo
     echo Successfully installed configs!
     echo Installing GTK configs...
-
     cp -r ./gnome/.config/* ~/.config/
 
     echo
     echo Successfully installed GTK configs!
     echo Installing rofi config...
-
     cp -r ./.config/rofi ~/.config/
 
     echo
     echo Successfully installed rofi config!
     echo Installing SSH config...
-
     mkdir -p ~/.ssh/
     cp ./.ssh/config ~/.ssh/
 
@@ -232,7 +216,6 @@ copy_themes_and_icons()
     echo
 
     echo Installing themes and icons...
-
     sudo mkdir -p /usr/share/themes /usr/share/icons
     sudo rm -rf /usr/share/icons/default
     sudo cp -r ./usr/share/icons/* /usr/share/icons
@@ -250,7 +233,6 @@ copy_fonts()
     echo
 
     echo Installing fonts...
-
     cp -r ./.local/share/fonts ~/.local/share
 
     echo Successfully installing fonts!
@@ -263,19 +245,36 @@ copy_everything_else()
     echo
 
     echo Installing .xprofile...
-
     cp ./.xprofile ~/
 
     echo
     echo Installing .xinitrc
-
     cp ./.xinitrc ~/
 
     echo
-    echo Installing 50-mouse-acceleration.conf
+    echo Installing cpupower config
+    sudo cp ./etc/default/cpupower /etc/default
 
+    echo
+    echo Installing grub config
+    sudo cp ./etc/default/grub /etc/default
+
+    echo
+    echo Running grub-mkconfig
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+    echo
+    echo Installing pacman.conf
+    sudo cp ./etc/pacman.conf /etc
+
+    echo
+    echo Installing 50-mouse-acceleration.conf
     sudo mkdir -p /etc/X11/xorg.conf.d
-    sudo cp ./etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
+    sudo cp ./etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
+
+    echo
+    echo Installing 20-intel.conf
+    sudo cp ./etc/X11/xorg.conf.d/20-intel.conf /etc/X11/xorg.conf.d
 
     echo
     echo Installing environment...
