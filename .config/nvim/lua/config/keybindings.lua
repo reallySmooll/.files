@@ -3,9 +3,7 @@ local function mapkey(mode, key, command, option)
 end
 
 --[[ Normal Mode ]]
-                    --
-
--- Exit NeoVim by pressing CTRL+Q
+---- Exit NeoVim by pressing CTRL+Q
 mapkey("n", "<C-q>", "<CMD>qa<CR>", { noremap = true })
 
 -- Exit all windows and views by pressing SPACE+Q+A
@@ -25,7 +23,7 @@ mapkey("n", "<LEADER>fr", ":%s/", { noremap = true })
 
 -->> START [ Split view commands ] <<--
 
--- Split view horizontaly
+-- Split view horizontally
 mapkey("n", "<LEADER>sv", "<CMD>sv<CR>", { noremap = true })
 
 -- Split view vertically
@@ -80,6 +78,7 @@ mapkey("n", "<LEADER>b", "<CMD>lua require(\"dap\").toggle_breakpoint()<CR>", { 
 
 -- Telescope
 mapkey("n", "<LEADER>t", "<CMD>Telescope<CR>", { noremap = true })
+mapkey("n", "<LEADER>fb", "<CMD>Telescope file_browser path=%:p:h select_buffer=true<CR>", { noremap = true })
 
 -- Overseer
 mapkey("n", "<LEADER>or", "<CMD>OverseerRun<CR>", { noremap = true })

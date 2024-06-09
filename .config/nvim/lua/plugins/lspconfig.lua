@@ -9,13 +9,23 @@ local navbuddy = require("nvim-navbuddy")
 --    dynamicRegistration = false,
 --    lineFoldingOnly = true
 --}
-local lsps = { "cmake", "lua_ls", "tsserver", "html", "eslint", "cssls", "clangd" }
+local lsps = {
+    "cmake",
+    "lua_ls",
+    "tsserver",
+    "clangd",
+    "typos_lsp",
+    "emmet_language_server"
+}
 for _, lsp in ipairs(lsps) do
     lspconfig[lsp].setup {
         capabilities = capabilities,
-        on_attach = function (client, bufnr)
+        on_attach = (lsp ~= "typos_lsp") and function (client, bufnr)
             navbuddy.attach(client, bufnr)
-        end
+        end or nil,
+        init_options = (lsp == "clangd") and {
+            fallbackFlags = { "--std=c++23" }
+        } or nil
     }
 end
 

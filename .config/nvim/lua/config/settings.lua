@@ -23,8 +23,8 @@ g.python_highlight_space_errors  = 0
 g.python_highlight_indent_errors = 0
 
 o.foldcolumn = '1'
-o.foldlevel = 99
-o.foldlevelstart = 99
+o.foldlevel = 100
+o.foldlevelstart = 100
 o.foldenable = true
 o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
