@@ -1,9 +1,9 @@
 # GRUB boot loader configuration
 
-GRUB_DEFAULT="Opcje zaawansowane dla systemu Arch Linux>Arch Linux, z systemem Linux linux-zen"
+GRUB_DEFAULT="Arch Linux"
 GRUB_TIMEOUT="3"
 GRUB_DISTRIBUTOR="Arch"
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7 quiet modprobe.blacklist=atomisp modprobe.blacklist=intel_atomisp2_pm threadirqs tsc=reliable clocksource=tsc mitigations=off split_lock_detect=off intel_idle.max_cstate=0 i915.enable_fbc=1"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7 modprobe.blacklist=atomisp modprobe.blacklist=intel_atomisp2_pm threadirqs tsc=reliable clocksource=tsc mitigations=off split_lock_detect=off intel_idle.max_cstate=0 i915.enable_fbc=1"
 GRUB_CMDLINE_LINUX="rootfstype=ext4"
 
 # Preload both GPT and MBR modules so that they are not missed
