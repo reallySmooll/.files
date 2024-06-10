@@ -268,6 +268,10 @@ copy_everything_else()
     sudo cp ./etc/pacman.conf /etc
 
     echo
+    echo Installing zram-generator.conf
+    sudo cp ./etc/systemd/zram-generator.conf /etc/systemd
+
+    echo
     echo Installing 50-mouse-acceleration.conf
     sudo mkdir -p /etc/X11/xorg.conf.d
     sudo cp ./etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
